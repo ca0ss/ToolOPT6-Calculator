@@ -3,6 +3,8 @@
 
 This is an app created for helping user to enable some greyed-out ToolOPT6 Settings in EZ-Adjust menu, this can potentially brick your tv and cause it to malfunction.
 
+For enter the EZ-Adjust menu just Google it ;)
+
 Without an official LG USB dongle used by authorized service centres, most of that option will be greyed out, but manipulating the code in the correct way you can change the values without even unlocking them
 
 ![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Menu.jpg)
@@ -59,3 +61,6 @@ Use the software only if:
 I use this software only fot unlocking PVR and Time Shift on my TV.
 I found most of the blacked out items via google image searches of the menu in question. I have not directly modified the values of the "Digital eye", "sound mode", "Wifi/BT", the items reported in the program are the result of educated guess based on other tv and redundant value in multiple tv having same menu items.
 I personally test "Audio EQ/ Eye" option using the code "196200459" finding "Type1" setting. I don't test "Type2" option.
+
+#Expandig the Project
+If your TV have different menu item, don't use the software but wrote here a new Issue. i will implement it on a new release :)
