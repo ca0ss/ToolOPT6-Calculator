@@ -3,7 +3,9 @@
 This is an app created for helping user to enable some greyed-out ToolOPT6 Settings in EZ-Adjust menu
 
 
-After some test, trial and error i manage to decode the method how LG save the settings on ToolOPT6 menu
+After some test, trial and error i manage to decode the method how LG save the settings on ToolOPT6 menu on my 55UP75006LF
+
+
 
 00 1001 0111 0000 1100 1100 0000 10** == Digital Eye
 00 1001 0111 0000 1100 1100 0000 1*11 == energy star
