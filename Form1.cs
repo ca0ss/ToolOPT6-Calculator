@@ -20,7 +20,7 @@ namespace ToolOPT6_Calculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //comboBox1.SelectedIndex = 0;
+            cmbSeries.SelectedIndex = 0;
             cmb1EYE.SelectedIndex = 3;
             cmb2Star.SelectedIndex = 0;
             cmb3AdaptiveDim.SelectedIndex = 1;
@@ -45,7 +45,6 @@ namespace ToolOPT6_Calculator
         private void button1_Click(object sender, EventArgs e)
         {
             Decode();
-           // string TMP = Convert.ToString(txtToolOPT6.Text, 2);//.PadLeft(30, '0');
 
 
         }
@@ -56,25 +55,46 @@ namespace ToolOPT6_Calculator
             {
 
                 int numeroDecimale = int.Parse(txtToolOPT6.Text);
-                string numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0'); 
+
+                //old static 30 digit code
+                // string numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0');
+
+                //implementing C3 Encoding
+                string numeroBinario = "";
+                if (cmbSeries.SelectedIndex == 1) { numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(31, '0'); }
+                else if (cmbSeries.SelectedIndex == 0) { numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0'); }
+
                 lblBinary.Text = numeroBinario;
-                cmb1EYE.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(28, 2));
-                cmb2Star.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(27, 1));
-                cmb3AdaptiveDim.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(26, 1));
-                cmb4Adaptive.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(22, 4));
-                cmb5ECO.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(18, 4));
-                cmb6Sound.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(16, 2));
-                cmb7ISF.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(15, 1));
-                cmb8SETID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(14, 1));
-                cmb9ATV.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(13, 1));
-                cmbADVR.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(12, 1));
-                cmbBAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(11, 1));
-                cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(9, 2));
-                cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 3));
-                cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 1));
-                cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
-                cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
-                cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
+
+                cmb1EYE.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 2), 2));
+                cmb2Star.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 3), 1));
+                cmb3AdaptiveDim.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 4), 1));
+                cmb4Adaptive.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 8), 4));
+                cmb5ECO.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 12), 4));
+                cmb6Sound.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 14), 2));
+                cmb7ISF.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 15), 1));
+                cmb8SETID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 16), 1));
+                cmb9ATV.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 17), 1));
+                cmbADVR.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 18), 1));
+                cmbBAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 19), 1));
+                cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 21), 2));
+                //implementing c3 encoding
+                if (cmbSeries.SelectedIndex == 0)
+                { //u7500 value of WiFi ASSY has 3 bit
+                    cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 3));
+                    cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 1));
+                    cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
+                    cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
+                    cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
+                }
+                else
+                {//c3 value of WiFi ASSY has 3 bit
+                    cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 4));
+                    cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 1));
+                    cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
+                    cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
+                    cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
+                }
             }
             catch
             {
@@ -97,7 +117,12 @@ namespace ToolOPT6_Calculator
             string DVR = Convert.ToString(cmbADVR.SelectedIndex, 2);
             string AUDIO = Convert.ToString(cmbBAudio.SelectedIndex, 2);
             string WIFI = Convert.ToString(cmbCWIFIBT.SelectedIndex, 2).PadLeft(2, '0');
-            string WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(3, '0');
+            string WIFIASSY = "0";
+
+            //implementing C3 Encoding
+            if (cmbSeries.SelectedIndex == 1) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(4, '0'); }
+            else if (cmbSeries.SelectedIndex == 0) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(3, '0'); }
+
             string REMOCON = Convert.ToString(cmbEREMOCON.SelectedIndex, 2);
             string AUDIOEQ = Convert.ToString(cmbFAudio.SelectedIndex, 2).PadLeft(2, '0');
             string EDID = Convert.ToString(cmbGEDID.SelectedIndex, 2).PadLeft(2, '0');
@@ -216,21 +241,63 @@ namespace ToolOPT6_Calculator
 
         private void txtToolOPT6_TextChanged(object sender, EventArgs e)
         {
-            //Decode();
-        //if(int.Parse(txtToolOPT6.Text) <= 903344063)
-          //  {
-               lblBinary.Text = Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0');
-         //   }
-       // else
-        //    {
-        //        txtToolOPT6.Text = "903344063";
-         //       lblBinary.Text = Convert.ToString(int.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0');
-         //   }
+
+            if (cmbSeries.SelectedIndex == 0)
+            {
+                lblBinary.Text = Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0');
+            }
+            else
+            {
+                lblBinary.Text = Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(31, '0');
+            }
+
         }
 
         private void txtToolOPT6_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void cmbSeries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cmbSeries.SelectedIndex == 1 && cmbDWifiAssy.Items.Count == 7) 
+            {
+                //adding c3 items on WIFI ASSY
+                cmbDWifiAssy.Items.Add("Single_22Y");
+                cmbDWifiAssy.Items.Add("M_Single_22Y");
+                cmbDWifiAssy.Items.Add("Dual_23Y");
+                cmbDWifiAssy.Items.Add("Single_23Y");
+
+                //removing u7500 series and adding c3 items
+                cmbGEDID.Items.Clear();
+                cmbGEDID.Items.Add("ac3");
+                cmbGEDID.Items.Add("ac3+dts"); 
+                cmbGEDID.Items.Add("TrueHD");
+                cmbGEDID.Items.Add("TrueHD+dts");
+                cmbGEDID.SelectedIndex = 1;
+
+            }
+            else if (cmbSeries.SelectedIndex == 0 && cmbDWifiAssy.Items.Count != 7)
+            {
+                //removing c3 items on WIFI ASSY
+                cmbDWifiAssy.SelectedIndex = 3;
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+
+                //removing c3 series and adding u7500 items
+                cmbGEDID.Items.Clear();
+                cmbGEDID.Items.Add("pcm");
+                cmbGEDID.Items.Add("ac3");
+                cmbGEDID.Items.Add("TrueHD");
+                cmbGEDID.SelectedIndex = 1;
+            }
+
+       
+
+            Encode();
         }
     }
 }

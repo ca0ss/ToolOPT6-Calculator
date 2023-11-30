@@ -67,12 +67,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.lblBinary = new System.Windows.Forms.Label();
+            this.cmbSeries = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 22);
+            this.label1.Location = new System.Drawing.Point(57, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
@@ -80,7 +82,7 @@
             // 
             // txtToolOPT6
             // 
-            this.txtToolOPT6.Location = new System.Drawing.Point(90, 19);
+            this.txtToolOPT6.Location = new System.Drawing.Point(110, 67);
             this.txtToolOPT6.MaxLength = 10;
             this.txtToolOPT6.Name = "txtToolOPT6";
             this.txtToolOPT6.Size = new System.Drawing.Size(150, 20);
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 83);
+            this.label2.Location = new System.Drawing.Point(57, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 2;
@@ -106,7 +108,7 @@
             "eyeSensor",
             "Unknown",
             "OTP_eyeSensor"});
-            this.cmb1EYE.Location = new System.Drawing.Point(169, 80);
+            this.cmb1EYE.Location = new System.Drawing.Point(189, 128);
             this.cmb1EYE.Name = "cmb1EYE";
             this.cmb1EYE.Size = new System.Drawing.Size(139, 21);
             this.cmb1EYE.TabIndex = 3;
@@ -115,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 112);
+            this.label3.Location = new System.Drawing.Point(57, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 4;
@@ -128,7 +130,7 @@
             this.cmb2Star.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmb2Star.Location = new System.Drawing.Point(169, 109);
+            this.cmb2Star.Location = new System.Drawing.Point(189, 157);
             this.cmb2Star.Name = "cmb2Star";
             this.cmb2Star.Size = new System.Drawing.Size(139, 21);
             this.cmb2Star.TabIndex = 5;
@@ -141,7 +143,7 @@
             this.cmb3AdaptiveDim.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmb3AdaptiveDim.Location = new System.Drawing.Point(169, 138);
+            this.cmb3AdaptiveDim.Location = new System.Drawing.Point(189, 186);
             this.cmb3AdaptiveDim.Name = "cmb3AdaptiveDim";
             this.cmb3AdaptiveDim.Size = new System.Drawing.Size(139, 21);
             this.cmb3AdaptiveDim.TabIndex = 7;
@@ -150,7 +152,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 141);
+            this.label4.Location = new System.Drawing.Point(57, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 6;
@@ -164,7 +166,7 @@
             "LG Sound Engine",
             "Dolby Atmos",
             "DTS Virtual X"});
-            this.cmb6Sound.Location = new System.Drawing.Point(169, 232);
+            this.cmb6Sound.Location = new System.Drawing.Point(189, 280);
             this.cmb6Sound.Name = "cmb6Sound";
             this.cmb6Sound.Size = new System.Drawing.Size(139, 21);
             this.cmb6Sound.TabIndex = 13;
@@ -173,7 +175,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 235);
+            this.label5.Location = new System.Drawing.Point(57, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 12;
@@ -200,7 +202,7 @@
             "90",
             "95",
             "100"});
-            this.cmb5ECO.Location = new System.Drawing.Point(169, 199);
+            this.cmb5ECO.Location = new System.Drawing.Point(189, 247);
             this.cmb5ECO.Name = "cmb5ECO";
             this.cmb5ECO.Size = new System.Drawing.Size(139, 21);
             this.cmb5ECO.TabIndex = 11;
@@ -209,7 +211,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 202);
+            this.label6.Location = new System.Drawing.Point(57, 250);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 13);
             this.label6.TabIndex = 10;
@@ -232,7 +234,7 @@
             "Step10",
             "Step11",
             "Step12"});
-            this.cmb4Adaptive.Location = new System.Drawing.Point(169, 168);
+            this.cmb4Adaptive.Location = new System.Drawing.Point(189, 216);
             this.cmb4Adaptive.Name = "cmb4Adaptive";
             this.cmb4Adaptive.Size = new System.Drawing.Size(139, 21);
             this.cmb4Adaptive.TabIndex = 9;
@@ -241,7 +243,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 171);
+            this.label7.Location = new System.Drawing.Point(57, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 13);
             this.label7.TabIndex = 8;
@@ -254,7 +256,7 @@
             this.cmb8SETID.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmb8SETID.Location = new System.Drawing.Point(169, 297);
+            this.cmb8SETID.Location = new System.Drawing.Point(189, 345);
             this.cmb8SETID.Name = "cmb8SETID";
             this.cmb8SETID.Size = new System.Drawing.Size(139, 21);
             this.cmb8SETID.TabIndex = 17;
@@ -263,7 +265,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(37, 300);
+            this.label8.Location = new System.Drawing.Point(57, 348);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 16;
@@ -276,7 +278,7 @@
             this.cmb7ISF.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmb7ISF.Location = new System.Drawing.Point(169, 264);
+            this.cmb7ISF.Location = new System.Drawing.Point(189, 312);
             this.cmb7ISF.Name = "cmb7ISF";
             this.cmb7ISF.Size = new System.Drawing.Size(139, 21);
             this.cmb7ISF.TabIndex = 15;
@@ -285,7 +287,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(37, 267);
+            this.label9.Location = new System.Drawing.Point(57, 315);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(23, 13);
             this.label9.TabIndex = 14;
@@ -298,7 +300,7 @@
             this.cmbADVR.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmbADVR.Location = new System.Drawing.Point(169, 365);
+            this.cmbADVR.Location = new System.Drawing.Point(189, 413);
             this.cmbADVR.Name = "cmbADVR";
             this.cmbADVR.Size = new System.Drawing.Size(139, 21);
             this.cmbADVR.TabIndex = 21;
@@ -307,7 +309,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(37, 368);
+            this.label10.Location = new System.Drawing.Point(57, 416);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 20;
@@ -320,7 +322,7 @@
             this.cmb9ATV.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmb9ATV.Location = new System.Drawing.Point(169, 330);
+            this.cmb9ATV.Location = new System.Drawing.Point(189, 378);
             this.cmb9ATV.Name = "cmb9ATV";
             this.cmb9ATV.Size = new System.Drawing.Size(139, 21);
             this.cmb9ATV.TabIndex = 19;
@@ -329,7 +331,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(37, 333);
+            this.label11.Location = new System.Drawing.Point(57, 381);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 13);
             this.label11.TabIndex = 18;
@@ -342,7 +344,7 @@
             this.cmbBAudio.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmbBAudio.Location = new System.Drawing.Point(169, 400);
+            this.cmbBAudio.Location = new System.Drawing.Point(189, 448);
             this.cmbBAudio.Name = "cmbBAudio";
             this.cmbBAudio.Size = new System.Drawing.Size(139, 21);
             this.cmbBAudio.TabIndex = 23;
@@ -351,7 +353,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(37, 403);
+            this.label12.Location = new System.Drawing.Point(57, 451);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 22;
@@ -360,7 +362,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(37, 605);
+            this.label13.Location = new System.Drawing.Point(57, 653);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(34, 13);
             this.label13.TabIndex = 29;
@@ -369,7 +371,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(37, 570);
+            this.label14.Location = new System.Drawing.Point(57, 618);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(63, 13);
             this.label14.TabIndex = 28;
@@ -378,7 +380,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(37, 535);
+            this.label15.Location = new System.Drawing.Point(57, 583);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(81, 13);
             this.label15.TabIndex = 27;
@@ -387,7 +389,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(37, 502);
+            this.label16.Location = new System.Drawing.Point(57, 550);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(88, 13);
             this.label16.TabIndex = 26;
@@ -396,7 +398,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(37, 469);
+            this.label17.Location = new System.Drawing.Point(57, 517);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(80, 13);
             this.label17.TabIndex = 25;
@@ -405,7 +407,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(37, 437);
+            this.label18.Location = new System.Drawing.Point(57, 485);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(47, 13);
             this.label18.TabIndex = 24;
@@ -418,7 +420,7 @@
             this.cmbHWISA.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmbHWISA.Location = new System.Drawing.Point(169, 602);
+            this.cmbHWISA.Location = new System.Drawing.Point(189, 650);
             this.cmbHWISA.Name = "cmbHWISA";
             this.cmbHWISA.Size = new System.Drawing.Size(139, 21);
             this.cmbHWISA.TabIndex = 35;
@@ -432,7 +434,7 @@
             "pcm",
             "ac3",
             "True HD"});
-            this.cmbGEDID.Location = new System.Drawing.Point(169, 567);
+            this.cmbGEDID.Location = new System.Drawing.Point(189, 615);
             this.cmbGEDID.Name = "cmbGEDID";
             this.cmbGEDID.Size = new System.Drawing.Size(139, 21);
             this.cmbGEDID.TabIndex = 34;
@@ -446,7 +448,7 @@
             "Default",
             "Type1",
             "Type2"});
-            this.cmbFAudio.Location = new System.Drawing.Point(169, 532);
+            this.cmbFAudio.Location = new System.Drawing.Point(189, 580);
             this.cmbFAudio.Name = "cmbFAudio";
             this.cmbFAudio.Size = new System.Drawing.Size(139, 21);
             this.cmbFAudio.TabIndex = 33;
@@ -459,7 +461,7 @@
             this.cmbEREMOCON.Items.AddRange(new object[] {
             "OFF",
             "ON"});
-            this.cmbEREMOCON.Location = new System.Drawing.Point(169, 499);
+            this.cmbEREMOCON.Location = new System.Drawing.Point(189, 547);
             this.cmbEREMOCON.Name = "cmbEREMOCON";
             this.cmbEREMOCON.Size = new System.Drawing.Size(139, 21);
             this.cmbEREMOCON.TabIndex = 32;
@@ -477,7 +479,7 @@
             "Single_20Y",
             "None",
             "M_Dual_21Y"});
-            this.cmbDWifiAssy.Location = new System.Drawing.Point(169, 466);
+            this.cmbDWifiAssy.Location = new System.Drawing.Point(189, 514);
             this.cmbDWifiAssy.Name = "cmbDWifiAssy";
             this.cmbDWifiAssy.Size = new System.Drawing.Size(139, 21);
             this.cmbDWifiAssy.TabIndex = 31;
@@ -491,7 +493,7 @@
             "None",
             "Dual Combo MTK",
             "WiFi_BT"});
-            this.cmbCWIFIBT.Location = new System.Drawing.Point(169, 434);
+            this.cmbCWIFIBT.Location = new System.Drawing.Point(189, 482);
             this.cmbCWIFIBT.Name = "cmbCWIFIBT";
             this.cmbCWIFIBT.Size = new System.Drawing.Size(139, 21);
             this.cmbCWIFIBT.TabIndex = 30;
@@ -499,7 +501,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 17);
+            this.button1.Location = new System.Drawing.Point(266, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 23);
             this.button1.TabIndex = 36;
@@ -510,7 +512,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(37, 53);
+            this.label19.Location = new System.Drawing.Point(57, 101);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(36, 13);
             this.label19.TabIndex = 37;
@@ -519,16 +521,40 @@
             // lblBinary
             // 
             this.lblBinary.AutoSize = true;
-            this.lblBinary.Location = new System.Drawing.Point(87, 53);
+            this.lblBinary.Location = new System.Drawing.Point(107, 101);
             this.lblBinary.Name = "lblBinary";
             this.lblBinary.Size = new System.Drawing.Size(0, 13);
             this.lblBinary.TabIndex = 38;
+            // 
+            // cmbSeries
+            // 
+            this.cmbSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeries.FormattingEnabled = true;
+            this.cmbSeries.Items.AddRange(new object[] {
+            "UP75006",
+            "G3"});
+            this.cmbSeries.Location = new System.Drawing.Point(116, 23);
+            this.cmbSeries.Name = "cmbSeries";
+            this.cmbSeries.Size = new System.Drawing.Size(139, 21);
+            this.cmbSeries.TabIndex = 39;
+            this.cmbSeries.SelectedIndexChanged += new System.EventHandler(this.cmbSeries_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(57, 26);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 13);
+            this.label20.TabIndex = 40;
+            this.label20.Text = "TV Series";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 645);
+            this.ClientSize = new System.Drawing.Size(382, 721);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.cmbSeries);
             this.Controls.Add(this.lblBinary);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.button1);
@@ -620,6 +646,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lblBinary;
+        private System.Windows.Forms.ComboBox cmbSeries;
+        private System.Windows.Forms.Label label20;
     }
 }
 
