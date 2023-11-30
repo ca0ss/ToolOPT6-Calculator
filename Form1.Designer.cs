@@ -532,7 +532,7 @@
             this.cmbSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeries.FormattingEnabled = true;
             this.cmbSeries.Items.AddRange(new object[] {
-            "UP75006",
+            "UP75006 / C11LB",
             "G36LA"});
             this.cmbSeries.Location = new System.Drawing.Point(116, 23);
             this.cmbSeries.Name = "cmbSeries";

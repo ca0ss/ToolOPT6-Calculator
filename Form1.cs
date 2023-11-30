@@ -59,7 +59,7 @@ namespace ToolOPT6_Calculator
                 //old static 30 digit code
                 // string numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0');
 
-                //implementing C3 Encoding
+                //implementing G3 Encoding
                 string numeroBinario = "";
                 if (cmbSeries.SelectedIndex == 1) { numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(31, '0'); }
                 else if (cmbSeries.SelectedIndex == 0) { numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0'); }
@@ -78,7 +78,7 @@ namespace ToolOPT6_Calculator
                 cmbADVR.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 18), 1));
                 cmbBAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 19), 1));
                 cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 21), 2));
-                //implementing c3 encoding
+                //implementing G3 encoding
                 if (cmbSeries.SelectedIndex == 0)
                 { //u7500 value of WiFi ASSY has 3 bit
                     cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 3));
@@ -88,7 +88,7 @@ namespace ToolOPT6_Calculator
                     cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
                 }
                 else
-                {//c3 value of WiFi ASSY has 4 bit
+                {//G3 value of WiFi ASSY has 4 bit
                     cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 4));
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 1));
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
@@ -119,7 +119,7 @@ namespace ToolOPT6_Calculator
             string WIFI = Convert.ToString(cmbCWIFIBT.SelectedIndex, 2).PadLeft(2, '0');
             string WIFIASSY = "0";
 
-            //implementing C3 Encoding
+            //implementing G3 Encoding
             if (cmbSeries.SelectedIndex == 1) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(4, '0'); }
             else if (cmbSeries.SelectedIndex == 0) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(3, '0'); }
 
@@ -263,13 +263,13 @@ namespace ToolOPT6_Calculator
 
             if (cmbSeries.SelectedIndex == 1 && cmbDWifiAssy.Items.Count == 7) 
             {
-                //adding c3 items on WIFI ASSY
+                //adding G3 items on WIFI ASSY
                 cmbDWifiAssy.Items.Add("Single_22Y");
                 cmbDWifiAssy.Items.Add("M_Single_22Y");
                 cmbDWifiAssy.Items.Add("Dual_23Y");
                 cmbDWifiAssy.Items.Add("Single_23Y");
 
-                //removing u7500 series and adding c3 items
+                //removing u7500 series and adding G3 items
                 cmbGEDID.Items.Clear();
                 cmbGEDID.Items.Add("ac3");
                 cmbGEDID.Items.Add("ac3+dts"); 
@@ -277,20 +277,20 @@ namespace ToolOPT6_Calculator
                 cmbGEDID.Items.Add("TrueHD+dts");
                 cmbGEDID.SelectedIndex = 0;
 
-                //changing Backlight name according to c3 menu
+                //changing Backlight name according to G3 menu
                 label6.Text = "Default Backlight";
 
             }
             else if (cmbSeries.SelectedIndex == 0 && cmbDWifiAssy.Items.Count != 7)
             {
-                //removing c3 items on WIFI ASSY
+                //removing G3 items on WIFI ASSY
                 cmbDWifiAssy.SelectedIndex = 0;
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
 
-                //removing c3 series and adding u7500 items
+                //removing G3 series and adding u7500 items
                 cmbGEDID.Items.Clear();
                 cmbGEDID.Items.Add("pcm");
                 cmbGEDID.Items.Add("ac3");
