@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
 [assembly: AssemblyTitle("ToolOPT6 Calculator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Coded by Ca0ss!")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ToolOPT6 Calculator")]
