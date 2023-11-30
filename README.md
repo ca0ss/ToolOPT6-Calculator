@@ -52,21 +52,21 @@ This is the same thing for the LG OLED 55G36LA
 
 
 #WARNING  
-I'm not responsable of bricking your TV! remember to copy and save your original code.
-~I don't test what can appen if you input a wrong code or make an "out of bound" selection for and example a theoretical "Step 13" (1100 in binary)  on "Adaptive Dimming" selection.~
-If you input a wrong code that make an "out of bound" selection, the TV simply adjust it to a valid value in most of case. I try to enable DTS on both G3 and 75UP tv, in the first case the tv keep wrong code but does not change "Sound Mode" selection, in the second the tv simply adjust code to a valid value. Should not make any brick.
+I'm not responsable of bricking your TV! remember to copy and save your original code.  
+~I don't test what can appen if you input a wrong code or make an "out of bound" selection for and example a theoretical "Step 13" (1100 in binary)  on "Adaptive Dimming" selection.~  
+If you input a wrong code that make an "out of bound" selection, the TV simply adjust it to a valid value in most of case. I try to enable DTS on both G3 and 75UP tv, in the first case the tv keep wrong code but does not change "Sound Mode" selection, in the second the tv simply adjust code to a valid value. Should not make any brick.  
 
 Use the software only if:  
-1. The menu item showed in your TV are the same showed in the software interface
-2. Put the code showed in your TV in the software interface and chose Reverse button. The item in yout tv MUST match the item in the software interface
-3. If clicking on reverse button, software don't show any error.
+1. The menu item showed in your TV are the same showed in the software interface.  
+2. Put the code showed in your TV in the software interface and chose Reverse button. The item in yout tv MUST match the item in the software interface.  
+3. If clicking on reverse button, software don't show any error.  
 
 #Final thought  
-I use this software for enabling Dolby Atmos and unlocking PVR and Time Shift on my TV.
-I found most of the blacked out items via google image searches of the menu in question. I have not directly modified the values of the "Digital eye", ~"sound mode"~, "Wifi/BT", the items reported in the program are the result of educated guess based on other tv and redundant value in multiple tv having same menu items.
-Sound mode in newest tv should be only 00 for LG Sound Engine and 01 for Dolby Atmos. DTS Virtual X option shouldnt be present on all tv, but i keep it there for test.
-I personally test "Audio EQ/ Eye" option using the code "196200459" finding "Type1" setting. I don't test "Type2" option.
+I use this software for enabling Dolby Atmos and unlocking PVR and Time Shift on my TV.  
+I found most of the blacked out items via google image searches of the menu in question. I have not directly modified the values of the "Digital eye", ~"sound mode"~, "Wifi/BT", the items reported in the program are the result of educated guess based on other tv and redundant value in multiple tv having same menu items.  
+Sound mode in newest tv should be only 00 for LG Sound Engine and 01 for Dolby Atmos. DTS Virtual X option shouldnt be present on all tv, but i keep it there for test.  
+I personally test "Audio EQ/ Eye" option using the code "196200459" finding "Type1" setting. I don't test "Type2" option.  
 
 #Expandig the Project  
-If your TV have different menu item, don't use the software but wrote here a new Issue. i will implement it on a new release :)
+If your TV have different menu item, don't use the software but wrote here a new Issue. i will implement it on a new release :)  
 If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrote me on t.me/Ca0ss93
