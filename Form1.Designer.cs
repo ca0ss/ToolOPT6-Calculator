@@ -70,6 +70,8 @@
             this.lblBinary = new System.Windows.Forms.Label();
             this.cmbSeries = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.cmbIMARK = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -533,7 +535,8 @@
             this.cmbSeries.FormattingEnabled = true;
             this.cmbSeries.Items.AddRange(new object[] {
             "UP75006 / C11LB",
-            "G36LA"});
+            "G36LA",
+            "C26LB"});
             this.cmbSeries.Location = new System.Drawing.Point(116, 23);
             this.cmbSeries.Name = "cmbSeries";
             this.cmbSeries.Size = new System.Drawing.Size(139, 21);
@@ -549,11 +552,35 @@
             this.label20.TabIndex = 40;
             this.label20.Text = "TV Series";
             // 
+            // cmbIMARK
+            // 
+            this.cmbIMARK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIMARK.FormattingEnabled = true;
+            this.cmbIMARK.Items.AddRange(new object[] {
+            "OFF",
+            "ON"});
+            this.cmbIMARK.Location = new System.Drawing.Point(189, 685);
+            this.cmbIMARK.Name = "cmbIMARK";
+            this.cmbIMARK.Size = new System.Drawing.Size(139, 21);
+            this.cmbIMARK.TabIndex = 42;
+            this.cmbIMARK.SelectedIndexChanged += new System.EventHandler(this.cmbIMARK_SelectedIndexChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(57, 688);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(105, 13);
+            this.label21.TabIndex = 41;
+            this.label21.Text = "Markone WiFi Single";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 721);
+            this.ClientSize = new System.Drawing.Size(382, 740);
+            this.Controls.Add(this.cmbIMARK);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.cmbSeries);
             this.Controls.Add(this.lblBinary);
@@ -650,6 +677,8 @@
         private System.Windows.Forms.Label lblBinary;
         private System.Windows.Forms.ComboBox cmbSeries;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cmbIMARK;
+        private System.Windows.Forms.Label label21;
     }
 }
 

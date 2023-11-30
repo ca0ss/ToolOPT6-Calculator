@@ -38,6 +38,7 @@ namespace ToolOPT6_Calculator
             cmbFAudio.SelectedIndex = 0;
             cmbGEDID.SelectedIndex = 1;
             cmbHWISA.SelectedIndex = 0;
+            cmbIMARK.SelectedIndex = 0;
 
             Encode();
         }
@@ -59,9 +60,9 @@ namespace ToolOPT6_Calculator
                 //old static 30 digit code
                 // string numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0');
 
-                //implementing G3 Encoding
+                //implementing G3/C2 Encoding
                 string numeroBinario = "";
-                if (cmbSeries.SelectedIndex == 1) { numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(31, '0'); }
+                if (cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 2) { numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(31, '0'); }
                 else if (cmbSeries.SelectedIndex == 0) { numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0'); }
 
                 lblBinary.Text = numeroBinario;
@@ -78,7 +79,7 @@ namespace ToolOPT6_Calculator
                 cmbADVR.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 18), 1));
                 cmbBAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 19), 1));
                 cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 21), 2));
-                //implementing G3 encoding
+                //implementing G3/c2 encoding
                 if (cmbSeries.SelectedIndex == 0)
                 { //u7500 value of WiFi ASSY has 3 bit
                     cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 3));
@@ -87,13 +88,22 @@ namespace ToolOPT6_Calculator
                     cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
                     cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
                 }
-                else
+                else if(cmbSeries.SelectedIndex == 1 )
                 {//G3 value of WiFi ASSY has 4 bit
                     cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 4));
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 1));
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
                     cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
                     cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
+                }
+                else if (cmbSeries.SelectedIndex == 2 )
+                { //c2 value of WiFi ASSY has 3 bit but is 1 bit long for MARKONE WIFI
+                    cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(7, 3));
+                    cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 1));
+                    cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(4, 2));
+                    cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(2, 2));
+                    cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 1));
+                    cmbIMARK.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
                 }
             }
             catch
@@ -121,14 +131,23 @@ namespace ToolOPT6_Calculator
 
             //implementing G3 Encoding
             if (cmbSeries.SelectedIndex == 1) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(4, '0'); }
-            else if (cmbSeries.SelectedIndex == 0) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(3, '0'); }
+            else if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 2) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(3, '0'); }
 
             string REMOCON = Convert.ToString(cmbEREMOCON.SelectedIndex, 2);
             string AUDIOEQ = Convert.ToString(cmbFAudio.SelectedIndex, 2).PadLeft(2, '0');
             string EDID = Convert.ToString(cmbGEDID.SelectedIndex, 2).PadLeft(2, '0');
             string WISA = Convert.ToString(cmbHWISA.SelectedIndex, 2).PadLeft(1, '0');
-            
-            string OPTCODE = WISA + EDID + AUDIOEQ + REMOCON + WIFIASSY + WIFI + AUDIO + DVR + ATV + SETID + ISF + SOUND + ECO + ADAPTIVE + ADAPTIVEDIM + STAR + EYE;
+
+            //implementing C2 Encoding
+            string MARKONE = "";
+
+            if (cmbSeries.SelectedIndex == 2)
+            {
+                MARKONE = Convert.ToString(cmbIMARK.SelectedIndex, 2).PadLeft(1, '0');
+            }
+
+
+                string OPTCODE = MARKONE + WISA + EDID + AUDIOEQ + REMOCON + WIFIASSY + WIFI + AUDIO + DVR + ATV + SETID + ISF + SOUND + ECO + ADAPTIVE + ADAPTIVEDIM + STAR + EYE;
 
             //MessageBox.Show(OPTCODE.ToString());
             lblBinary.Text = OPTCODE;
@@ -246,7 +265,7 @@ namespace ToolOPT6_Calculator
             {
                 lblBinary.Text = Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0');
             }
-            else
+            else if (cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 2)
             {
                 lblBinary.Text = Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(31, '0');
             }
@@ -261,7 +280,10 @@ namespace ToolOPT6_Calculator
         private void cmbSeries_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (cmbSeries.SelectedIndex == 1 && cmbDWifiAssy.Items.Count == 7) 
+            label21.Visible = false;
+            cmbIMARK.Visible = false;
+
+            if (cmbSeries.SelectedIndex == 1 && cmbDWifiAssy.Items.Count == 7)
             {
                 //adding G3 items on WIFI ASSY
                 cmbDWifiAssy.Items.Add("Single_22Y");
@@ -272,7 +294,7 @@ namespace ToolOPT6_Calculator
                 //removing u7500 series and adding G3 items
                 cmbGEDID.Items.Clear();
                 cmbGEDID.Items.Add("ac3");
-                cmbGEDID.Items.Add("ac3+dts"); 
+                cmbGEDID.Items.Add("ac3+dts");
                 cmbGEDID.Items.Add("TrueHD");
                 cmbGEDID.Items.Add("TrueHD+dts");
                 cmbGEDID.SelectedIndex = 0;
@@ -301,9 +323,39 @@ namespace ToolOPT6_Calculator
                 label6.Text = "ECO Default Backlight";
 
             }
+            else if (cmbSeries.SelectedIndex == 2 && cmbDWifiAssy.Items.Count != 7)
+            {
+                //removing G3 items on WIFI ASSY
+                cmbDWifiAssy.SelectedIndex = 0;
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
 
-       
+                //removing G3 series and adding c26 items
+                cmbGEDID.Items.Clear();
+                cmbGEDID.Items.Add("pcm");
+                cmbGEDID.Items.Add("ac3");
+                cmbGEDID.Items.Add("TrueHD");
+                cmbGEDID.SelectedIndex = 0;
 
+                //changing Backlight name according to C26 menu
+                label6.Text = "ECO Default Backlight";
+
+            }
+
+            if (cmbSeries.SelectedIndex == 2)
+            {
+
+                label21.Visible = true;
+                cmbIMARK.Visible = true;
+            }
+
+                Encode();
+        }
+
+        private void cmbIMARK_SelectedIndexChanged(object sender, EventArgs e)
+        {
             Encode();
         }
     }
