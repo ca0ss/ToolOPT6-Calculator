@@ -532,7 +532,7 @@
             this.cmbSeries.FormattingEnabled = true;
             this.cmbSeries.Items.AddRange(new object[] {
             "UP75006",
-            "G3"});
+            "G36LA"});
             this.cmbSeries.Location = new System.Drawing.Point(116, 23);
             this.cmbSeries.Name = "cmbSeries";
             this.cmbSeries.Size = new System.Drawing.Size(139, 21);
