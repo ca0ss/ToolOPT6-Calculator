@@ -536,7 +536,7 @@
             this.cmbSeries.Items.AddRange(new object[] {
             "UP75006 / C11LB",
             "G36LA",
-            "C26LB"});
+            "C26LB / NANO78"});
             this.cmbSeries.Location = new System.Drawing.Point(116, 23);
             this.cmbSeries.Name = "cmbSeries";
             this.cmbSeries.Size = new System.Drawing.Size(139, 21);
