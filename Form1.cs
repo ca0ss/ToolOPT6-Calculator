@@ -275,13 +275,16 @@ namespace ToolOPT6_Calculator
                 cmbGEDID.Items.Add("ac3+dts"); 
                 cmbGEDID.Items.Add("TrueHD");
                 cmbGEDID.Items.Add("TrueHD+dts");
-                cmbGEDID.SelectedIndex = 1;
+                cmbGEDID.SelectedIndex = 0;
+
+                //changing Backlight name according to c3 menu
+                label6.Text = "Default Backlight";
 
             }
             else if (cmbSeries.SelectedIndex == 0 && cmbDWifiAssy.Items.Count != 7)
             {
                 //removing c3 items on WIFI ASSY
-                cmbDWifiAssy.SelectedIndex = 3;
+                cmbDWifiAssy.SelectedIndex = 0;
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
@@ -292,7 +295,11 @@ namespace ToolOPT6_Calculator
                 cmbGEDID.Items.Add("pcm");
                 cmbGEDID.Items.Add("ac3");
                 cmbGEDID.Items.Add("TrueHD");
-                cmbGEDID.SelectedIndex = 1;
+                cmbGEDID.SelectedIndex = 0;
+
+                //changing Backlight name according to u7500 menu
+                label6.Text = "ECO Default Backlight";
+
             }
 
        
