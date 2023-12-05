@@ -82,7 +82,8 @@ Q: When I calculate a code with #any option# selected, the tv won't select that.
 A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  
 
 Q: I succesfull reach toolOPT6 menu, but the input field is read only, how i can change it?  
-A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at t.me/Ca0ss93
+A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at t.me/Ca0ss93  
+Maybe in the future I will write a guide on how to do this, but for now I don't want LG to release a patch that blocks this method;
 
 
 
