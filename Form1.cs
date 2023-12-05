@@ -42,6 +42,7 @@ namespace ToolOPT6_Calculator
             cmbGEDID.SelectedIndex = 1;
             cmbHWISA.SelectedIndex = 0;
             cmbIMARK.SelectedIndex = 0;
+            this.Size = new Size(371, 728);
 
             Encode();
         }
@@ -428,16 +429,16 @@ namespace ToolOPT6_Calculator
             }
 
             //Adjust Name for C26 Series
+            
             if (cmbSeries.SelectedIndex != 1)
             {
                 label6.Text = "ECO Default Backlight";
             }
-            else
+
+            if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 1)
             {
                 this.Size = new Size(371, 728);
             }
-
-
 
             if (cmbSeries.SelectedIndex == 1) //G3 Series
             {
@@ -458,7 +459,7 @@ namespace ToolOPT6_Calculator
                 //removing other series EDID and adding um7050 items
                 //i don't find photo of EDID items different from DTS or TrueHD but i find some russian notepad
                 cmbGEDID.Items.Clear();
-                cmbGEDID.Items.Add("pcm"); 
+                cmbGEDID.Items.Add("pcm");
                 cmbGEDID.Items.Add("ac3");
                 cmbGEDID.Items.Add("DTS");
                 cmbGEDID.Items.Add("TrueHD");
