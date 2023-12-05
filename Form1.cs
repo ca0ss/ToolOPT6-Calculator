@@ -20,6 +20,7 @@ namespace ToolOPT6_Calculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //My tv Original Settings :P
             cmbSeries.SelectedIndex = 0;
             cmb1EYE.SelectedIndex = 3;
             cmb2Star.SelectedIndex = 0;
@@ -99,7 +100,7 @@ namespace ToolOPT6_Calculator
                     cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
                 }
                 else if (cmbSeries.SelectedIndex == 2)
-                { //c2 value of WiFi ASSY has 3 bit but is 1 bit long for MARKONE WIFI
+                { //c2 value of WiFi ASSY has 3 bit but the resulting string still 31 bit long for MARKONE WIFI bit
                     cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(7, 3));
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 1));
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(4, 2));
