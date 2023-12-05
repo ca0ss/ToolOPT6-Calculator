@@ -5,9 +5,7 @@ This is an app created for helping user to enable some greyed-out ToolOPT6 Setti
 For enter the EZ-Adjust menu just Google it ;)  
 Without an official LG USB dongle used by authorized service centres, most of that option will be greyed out, but manipulating the code in the correct way you can change the values without even unlocking them
 
-![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Menu.jpg)
-
-![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Calculator%20B1.4.jpg)
+![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20example.jpg)
 
 
 
