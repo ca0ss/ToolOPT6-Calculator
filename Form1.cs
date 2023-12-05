@@ -429,12 +429,12 @@ namespace ToolOPT6_Calculator
             }
 
             //Adjust Name for C26 Series
-            
             if (cmbSeries.SelectedIndex != 1)
             {
                 label6.Text = "ECO Default Backlight";
             }
 
+            //Adjust Size for UP75 and G3
             if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 1)
             {
                 this.Size = new Size(371, 728);
