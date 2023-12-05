@@ -310,16 +310,28 @@ namespace ToolOPT6_Calculator
 
         private void txtToolOPT6_TextChanged(object sender, EventArgs e)
         {
-
-            if (cmbSeries.SelectedIndex == 0)
+            if (txtToolOPT6.Text != "")
             {
-                lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0'), 4);
+                if (cmbSeries.SelectedIndex == 0)
+                {
+                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0'), 4);
+                }
+                else if (cmbSeries.SelectedIndex != 0)
+                {
+                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(31, '0'), 4);
+                }
             }
-            else if (cmbSeries.SelectedIndex != 0)
+            else
             {
-                lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(31, '0'), 4);
+                if(cmbSeries.SelectedIndex == 0)
+                {
+                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(0, 2).PadLeft(30, '0'), 4);
+                }
+                else if (cmbSeries.SelectedIndex != 0)
+                {
+                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(0, 2).PadLeft(31, '0'), 4);
+                }
             }
-
 
         }
 
@@ -387,31 +399,55 @@ namespace ToolOPT6_Calculator
             }
             else
             {
+                label18.Text = "WiFi";
                 label17.Visible = false;
                 cmbDWifiAssy.Visible = false;
+                label16.Location = new Point(25, 517);
+                label15.Location = new Point(25, 550);
+                label14.Location = new Point(25, 583);
+                label13.Location = new Point(25, 618);
+                cmbEREMOCON.Location = new Point(157, 514);
+                cmbFAudio.Location = new Point(157, 547);
+                cmbGEDID.Location = new Point(157, 580);
+                cmbHWISA.Location = new Point(157, 615);
+                this.Size = new Size(375, 693);
             }
 
-            if(cmbSeries.SelectedIndex != 2)
-            {
-                label21.Visible = false;
-                cmbIMARK.Visible = false;
-            }
-      
 
-            if (cmbSeries.SelectedIndex == 0) //u7500 Serie
+            if (cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 4) //u7500 Serie
             {
-                //removing G3 series and adding u7500 items
+                //removing G3 series and adding u7500, C26, un7300 items
                 cmbGEDID.Items.Clear();
                 cmbGEDID.Items.Add("pcm");
                 cmbGEDID.Items.Add("ac3");
                 cmbGEDID.Items.Add("TrueHD");
                 cmbGEDID.SelectedIndex = 0;
+            }
 
-                //changing Backlight name according to u7500 menu
-                label6.Text = "ECO Default Backlight";
+            if (cmbSeries.SelectedIndex != 2)
+            {
+                label21.Visible = false;
+                cmbIMARK.Visible = false;
+            }
+            else
+            {
+                label21.Visible = true;
+                cmbIMARK.Visible = true;
                 this.Size = new Size(375, 728);
             }
-            else if (cmbSeries.SelectedIndex == 1) //G3 Serie
+
+            if (cmbSeries.SelectedIndex != 1)
+            {
+                label6.Text = "ECO Default Backlight";
+            }
+            else
+            {
+                this.Size = new Size(375, 728);
+            }
+
+
+
+            if (cmbSeries.SelectedIndex == 1) //G3 Serie
             {
                 //removing u7500 series and adding G3 items
                 cmbGEDID.Items.Clear();
@@ -423,49 +459,7 @@ namespace ToolOPT6_Calculator
 
                 //changing Backlight name according to G3 menu
                 label6.Text = "Default Backlight";
-                this.Size = new Size(375, 728);
 
-            }
-            else if (cmbSeries.SelectedIndex == 2) //c26 Series
-            {
-
-                label21.Visible = true;
-                cmbIMARK.Visible = true;
-
-                //removing G3 series and adding c26 items
-                cmbGEDID.Items.Clear();
-                cmbGEDID.Items.Add("pcm");
-                cmbGEDID.Items.Add("ac3");
-                cmbGEDID.Items.Add("TrueHD");
-                cmbGEDID.SelectedIndex = 0;
-
-                //changing Backlight name according to C26 menu
-                label6.Text = "ECO Default Backlight";
-                this.Size = new Size(375, 768);
-
-
-            }
-            else if (cmbSeries.SelectedIndex == 3)  //un7300 implementation
-            {
-                //removing G3 series and adding un7300 items
-                cmbGEDID.Items.Clear();
-                cmbGEDID.Items.Add("pcm");
-                cmbGEDID.Items.Add("ac3");
-                cmbGEDID.Items.Add("TrueHD");
-                cmbGEDID.SelectedIndex = 0;
-                //changing WiFi name according to un7300 menu
-                label18.Text = "WiFi";
-
-                label16.Location = new Point(25, 517);
-                label15.Location = new Point(25, 550);
-                label14.Location = new Point(25, 583);
-                label13.Location = new Point(25, 618);
-
-                cmbEREMOCON.Location = new Point(157, 514);
-                cmbFAudio.Location = new Point(157, 547);
-                cmbGEDID.Location = new Point(157, 580);
-                cmbHWISA.Location = new Point(157, 615);
-                this.Size = new Size(375, 693);
             }
             else if (cmbSeries.SelectedIndex == 4)  //um7050 implementation
             {
@@ -483,29 +477,17 @@ namespace ToolOPT6_Calculator
 
                 //adding initial curve experimental support
                 cmbFAudio.Items.Clear();
-                cmbFAudio.Items.Add("Initial Curve");
+                cmbFAudio.Items.Add("Initial Curve"); // should be 2 bit
                 cmbFAudio.Items.Add("Unknown !EXP!"); //adding 2 place holder for calculation and reverse reason. i need more research on a real tv
                 cmbFAudio.Items.Add("Unknown1 !EXP!"); //i don't find any photo online of value != "initial curve"
                 cmbFAudio.SelectedIndex = 0;
 
-                label18.Text = "WiFi";
                 TMP = cmbCWIFIBT.SelectedIndex;
                 cmbCWIFIBT.Items.Clear();
                 cmbCWIFIBT.Items.Add("None"); //000 "none" according to other models, still experiment, maybe there are more
                 cmbCWIFIBT.Items.Add("Dual_combo_mtk");//001
                 cmbCWIFIBT.Items.Add("11ac_only_rtk"); //010
                 cmbCWIFIBT.SelectedIndex = TMP;
-
-                label16.Location = new Point(25, 517);
-                label15.Location = new Point(25, 550);
-                label14.Location = new Point(25, 583);
-                label13.Location = new Point(25, 618);
-
-                cmbEREMOCON.Location = new Point(157, 514);
-                cmbFAudio.Location = new Point(157, 547);
-                cmbGEDID.Location = new Point(157, 580);
-                cmbHWISA.Location = new Point(157, 615);
-                this.Size = new Size(375, 693);
             }
 
                 Encode();
