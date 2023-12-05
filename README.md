@@ -7,8 +7,6 @@ Without an official LG USB dongle used by authorized service centres, most of th
 
 ![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Menu.jpg)
 
-![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Calculator.jpg)
-
 ![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Calculator%20B1.4.jpg)
 
 
