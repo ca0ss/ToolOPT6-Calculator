@@ -536,10 +536,11 @@
             this.cmbSeries.Items.AddRange(new object[] {
             "UP75006 / C11LB",
             "G36LA",
-            "C26LB / NANO78"});
+            "C26LB / NANO78",
+            "UN7300 !EXPERIMENTAL!"});
             this.cmbSeries.Location = new System.Drawing.Point(116, 23);
             this.cmbSeries.Name = "cmbSeries";
-            this.cmbSeries.Size = new System.Drawing.Size(139, 21);
+            this.cmbSeries.Size = new System.Drawing.Size(212, 21);
             this.cmbSeries.TabIndex = 39;
             this.cmbSeries.SelectedIndexChanged += new System.EventHandler(this.cmbSeries_SelectedIndexChanged);
             // 
@@ -578,7 +579,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 740);
+            this.ClientSize = new System.Drawing.Size(382, 729);
             this.Controls.Add(this.cmbIMARK);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
