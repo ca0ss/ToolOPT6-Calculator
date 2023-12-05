@@ -69,4 +69,20 @@ I personally test "Audio EQ/ Eye" option using the code "196200459" finding "Typ
 
 #Expandig the Project  
 If your TV have different menu item, don't use the software but wrote here a new Issue. i will implement it on a new release :)  
-If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrote me on t.me/Ca0ss93
+If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrote me on t.me/Ca0ss93  
+
+#FAQ  
+Q: My TV model is not listed on "TV Series" field, can I use this tool?  
+A: Yes only if when you put all your toolOPT6 settings on the calculator and it show you your current code.  
+
+Q: I don't know how to access that menu.  
+A: Just Google "How to access LG Service Menu without the Service Remote"  
+
+Q: When I calculate a code with #any option# selected, the tv won't select that.  
+A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  
+
+Q: I succesfull reach toolOPT6 menu, but the input field is read only, how i can change it?  
+A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at t.me/Ca0ss93
+
+
+
