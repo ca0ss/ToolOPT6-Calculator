@@ -9,6 +9,10 @@ Without an official LG USB dongle used by authorized service centres, most of th
 
 ![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Calculator.jpg)
 
+![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Calculator%20B1.4.jpg)
+
+
+
 The code shown is the decimal representation of a binary number of which each bit (or groups of it) represents specific flags
 After some test, trial and error and educated guess I manage to decode the method how LG save the settings on ToolOPT6 menu on my 55UP75006LF
 
