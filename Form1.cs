@@ -310,29 +310,20 @@ namespace ToolOPT6_Calculator
 
         private void txtToolOPT6_TextChanged(object sender, EventArgs e)
         {
-            if (txtToolOPT6.Text != "")
+            if (txtToolOPT6.Text == "")
             {
-                if (cmbSeries.SelectedIndex == 0)
-                {
-                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0'), 4);
-                }
-                else if (cmbSeries.SelectedIndex != 0)
-                {
-                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(31, '0'), 4);
-                }
-            }
-            else
-            {
-                if(cmbSeries.SelectedIndex == 0)
-                {
-                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(0, 2).PadLeft(30, '0'), 4);
-                }
-                else if (cmbSeries.SelectedIndex != 0)
-                {
-                    lblBinary.Text = InsertSpacesFromRight(Convert.ToString(0, 2).PadLeft(31, '0'), 4);
-                }
+                txtToolOPT6.Text = "0";
+                txtToolOPT6.SelectAll();
             }
 
+            if (cmbSeries.SelectedIndex == 0)
+            {
+                lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0'), 4);
+            }
+            else if (cmbSeries.SelectedIndex != 0)
+            {
+                lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(31, '0'), 4);
+            }
         }
 
         private void txtToolOPT6_KeyPress(object sender, KeyPressEventArgs e)
@@ -361,7 +352,7 @@ namespace ToolOPT6_Calculator
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
             }
 
-            //restoring stuff for UN7300 and UM7050 implementation
+            //Reverting UM7050 items
             if (cmbSeries.SelectedIndex != 4 && label15.Text != "Audio EQ/ EYE")
             {
                 label15.Text = "Audio EQ/ EYE";
@@ -397,7 +388,7 @@ namespace ToolOPT6_Calculator
                 cmbGEDID.Location = new Point(157, 615);
                 cmbHWISA.Location = new Point(157, 650);
             }
-            else
+            else //UN7300 and UM7050 implementation
             {
                 label18.Text = "WiFi";
                 label17.Visible = false;
@@ -410,13 +401,12 @@ namespace ToolOPT6_Calculator
                 cmbFAudio.Location = new Point(157, 547);
                 cmbGEDID.Location = new Point(157, 580);
                 cmbHWISA.Location = new Point(157, 615);
-                this.Size = new Size(375, 693);
+                this.Size = new Size(371, 693);
             }
 
-
-            if (cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 4) //u7500 Serie
+            //restoring EDID Items for  u7500, C26, un7300 Series
+            if (cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 4)
             {
-                //removing G3 series and adding u7500, C26, un7300 items
                 cmbGEDID.Items.Clear();
                 cmbGEDID.Items.Add("pcm");
                 cmbGEDID.Items.Add("ac3");
@@ -424,6 +414,7 @@ namespace ToolOPT6_Calculator
                 cmbGEDID.SelectedIndex = 0;
             }
 
+            //Show MarkOne only when c26 is selected
             if (cmbSeries.SelectedIndex != 2)
             {
                 label21.Visible = false;
@@ -433,23 +424,24 @@ namespace ToolOPT6_Calculator
             {
                 label21.Visible = true;
                 cmbIMARK.Visible = true;
-                this.Size = new Size(375, 728);
+                this.Size = new Size(371, 768);
             }
 
+            //Adjust Name for C26 Series
             if (cmbSeries.SelectedIndex != 1)
             {
                 label6.Text = "ECO Default Backlight";
             }
             else
             {
-                this.Size = new Size(375, 728);
+                this.Size = new Size(371, 728);
             }
 
 
 
-            if (cmbSeries.SelectedIndex == 1) //G3 Serie
+            if (cmbSeries.SelectedIndex == 1) //G3 Series
             {
-                //removing u7500 series and adding G3 items
+                //removing EDID and adding G3 EDID items
                 cmbGEDID.Items.Clear();
                 cmbGEDID.Items.Add("ac3");
                 cmbGEDID.Items.Add("ac3+dts");
@@ -463,7 +455,7 @@ namespace ToolOPT6_Calculator
             }
             else if (cmbSeries.SelectedIndex == 4)  //um7050 implementation
             {
-                //removing other series and adding um7050 items
+                //removing other series EDID and adding um7050 items
                 //i don't find photo of EDID items different from DTS or TrueHD but i find some russian notepad
                 cmbGEDID.Items.Clear();
                 cmbGEDID.Items.Add("pcm"); 
