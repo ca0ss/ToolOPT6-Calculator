@@ -85,6 +85,7 @@
             // 
             // txtToolOPT6
             // 
+            this.txtToolOPT6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToolOPT6.Location = new System.Drawing.Point(78, 67);
             this.txtToolOPT6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtToolOPT6.MaxLength = 10;
@@ -558,7 +559,7 @@
             "G36LA",
             "C26LB / NANO78",
             "UN7300 !EXPERIMENTAL!",
-            "UM7050 !EXPERIMENTAL!"});
+            "UM7050 / UM7300"});
             this.cmbSeries.Location = new System.Drawing.Point(84, 22);
             this.cmbSeries.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbSeries.Name = "cmbSeries";

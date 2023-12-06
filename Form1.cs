@@ -82,7 +82,15 @@ namespace ToolOPT6_Calculator
                 cmb9ATV.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 17), 1));
                 cmbADVR.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 18), 1));
                 cmbBAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 19), 1));
-                cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 21), 2));
+
+                if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4) //un7300 and um7050 experimental support
+                {
+                    cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(9, 3)); //wifi have 3 bit on this series
+                } else
+                {
+                    cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 21), 2));
+                }
+
                 //implementing G3/c2 encoding
                 if (cmbSeries.SelectedIndex == 0)
                 { //u7500 value of WiFi ASSY has 3 bit
@@ -172,7 +180,7 @@ namespace ToolOPT6_Calculator
             string OPTCODE = MARKONE + WISA + EDID + AUDIOEQ + REMOCON + WIFIASSY + WIFI + AUDIO + DVR + ATV + SETID + ISF + SOUND + ECO + ADAPTIVE + ADAPTIVEDIM + STAR + EYE;
 
 
-            if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4)  //implementing un7300 and um7050 experimental support, WIFI Assy Zeroed and Remocon have switched places
+            if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4)  //implementing un7300 experimental and um7050 support, WIFI Assy Zeroed and Remocon have switched places
             {
                 OPTCODE = WISA + EDID + AUDIOEQ + WIFIASSY + REMOCON + WIFI + AUDIO + DVR + ATV + SETID + ISF + SOUND + ECO + ADAPTIVE + ADAPTIVEDIM + STAR + EYE;
             }
@@ -337,7 +345,7 @@ namespace ToolOPT6_Calculator
            //WiFi ASSY Changer, I should check the type avaiable for other series. UP and G3 are checked, other not
             if (cmbSeries.SelectedIndex == 1 && cmbDWifiAssy.Items.Count == 7) //G3 Serie
             {
-                //adding G3 items on WIFI ASSY
+                //adding G3 items on WIFI ASSY; should investigate on c2 series if it have this items or not
                 cmbDWifiAssy.Items.Add("Single_22Y");
                 cmbDWifiAssy.Items.Add("M_Single_22Y");
                 cmbDWifiAssy.Items.Add("Dual_23Y");
@@ -346,7 +354,9 @@ namespace ToolOPT6_Calculator
             else if(cmbSeries.SelectedIndex != 1 && cmbDWifiAssy.Items.Count != 7)
             {
                 //removing G3 items on WIFI ASSY
-                cmbDWifiAssy.SelectedIndex = 0;
+                TMP = cmbDWifiAssy.SelectedIndex;
+                if(TMP >= 7) { TMP = 6; } //keeping selected item
+                cmbDWifiAssy.SelectedIndex = TMP;
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
                 cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
@@ -366,10 +376,11 @@ namespace ToolOPT6_Calculator
             if (cmbSeries.SelectedIndex != 4 && cmbCWIFIBT.Items[1].ToString() != "Dual Combo MTK")
             {
                 TMP = cmbCWIFIBT.SelectedIndex;
+                if (TMP >= 3) { TMP = 2; }
                 cmbCWIFIBT.Items.Clear();
-                cmbCWIFIBT.Items.Add("None");
-                cmbCWIFIBT.Items.Add("Dual Combo MTK");
-                cmbCWIFIBT.Items.Add("WiFi_BT");
+                cmbCWIFIBT.Items.Add("None"); //00
+                cmbCWIFIBT.Items.Add("Dual Combo MTK"); //01
+                cmbCWIFIBT.Items.Add("WiFi_BT"); //10
                 cmbCWIFIBT.SelectedIndex = TMP;
             }
 
@@ -408,11 +419,13 @@ namespace ToolOPT6_Calculator
             //restoring EDID Items for  u7500, C26, un7300 Series
             if (cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 4)
             {
+                TMP = cmbGEDID.SelectedIndex;
+                if (TMP >= 3) { TMP = 2; }
                 cmbGEDID.Items.Clear();
-                cmbGEDID.Items.Add("pcm");
-                cmbGEDID.Items.Add("ac3");
-                cmbGEDID.Items.Add("TrueHD");
-                cmbGEDID.SelectedIndex = 0;
+                cmbGEDID.Items.Add("pcm"); //00
+                cmbGEDID.Items.Add("ac3"); //01
+                cmbGEDID.Items.Add("TrueHD"); //10
+                cmbGEDID.SelectedIndex = TMP;
             }
 
             //Show MarkOne only when c26 is selected
@@ -443,12 +456,13 @@ namespace ToolOPT6_Calculator
             if (cmbSeries.SelectedIndex == 1) //G3 Series
             {
                 //removing EDID and adding G3 EDID items
+                TMP = cmbGEDID.SelectedIndex;
                 cmbGEDID.Items.Clear();
-                cmbGEDID.Items.Add("ac3");
-                cmbGEDID.Items.Add("ac3+dts");
-                cmbGEDID.Items.Add("TrueHD");
-                cmbGEDID.Items.Add("TrueHD+dts");
-                cmbGEDID.SelectedIndex = 0;
+                cmbGEDID.Items.Add("ac3"); //00
+                cmbGEDID.Items.Add("ac3+dts"); //01
+                cmbGEDID.Items.Add("TrueHD"); //10
+                cmbGEDID.Items.Add("TrueHD+dts"); //11
+                cmbGEDID.SelectedIndex = TMP;
 
                 //changing Backlight name according to G3 menu
                 label6.Text = "Default Backlight";
@@ -457,22 +471,22 @@ namespace ToolOPT6_Calculator
             else if (cmbSeries.SelectedIndex == 4)  //um7050 implementation
             {
                 //removing other series EDID and adding um7050 items
-                //i don't find photo of EDID items different from DTS or TrueHD but i find some russian notepad
+                TMP = cmbGEDID.SelectedIndex;
                 cmbGEDID.Items.Clear();
-                cmbGEDID.Items.Add("pcm");
-                cmbGEDID.Items.Add("ac3");
-                cmbGEDID.Items.Add("DTS");
-                cmbGEDID.Items.Add("TrueHD");
-                cmbGEDID.SelectedIndex = 0;
+                cmbGEDID.Items.Add("pcm"); //00
+                cmbGEDID.Items.Add("ac3"); //01
+                cmbGEDID.Items.Add("dts"); //10
+                cmbGEDID.Items.Add("TrueHD"); //11
+                cmbGEDID.SelectedIndex = TMP;
 
                 //changing names according to um7050 menu
                 label15.Text = "EYE Curve Derivation";
 
                 //adding initial curve experimental support
                 cmbFAudio.Items.Clear();
-                cmbFAudio.Items.Add("Initial Curve"); // should be 2 bit
-                cmbFAudio.Items.Add("Unknown !EXP!"); //adding 2 place holder for calculation and reverse reason. i need more research on a real tv
-                cmbFAudio.Items.Add("Unknown1 !EXP!"); //i don't find any photo online of value != "initial curve"
+                cmbFAudio.Items.Add("Initial Curve"); // 00 
+                cmbFAudio.Items.Add("1 Pole, Eye Uncoating"); //01
+                cmbFAudio.Items.Add("2 Pole, Eye Uncoating"); //10
                 cmbFAudio.SelectedIndex = 0;
 
                 TMP = cmbCWIFIBT.SelectedIndex;
@@ -480,6 +494,8 @@ namespace ToolOPT6_Calculator
                 cmbCWIFIBT.Items.Add("None"); //000 "none" according to other models, still experiment, maybe there are more
                 cmbCWIFIBT.Items.Add("Dual_combo_mtk");//001
                 cmbCWIFIBT.Items.Add("11ac_only_rtk"); //010
+                cmbCWIFIBT.Items.Add("11ac_only_mtk"); //011
+                cmbCWIFIBT.Items.Add("11ac_combo_mtk"); //100
                 cmbCWIFIBT.SelectedIndex = TMP;
             }
 
