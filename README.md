@@ -5,9 +5,9 @@ This is an app created for helping user to enable some greyed-out ToolOPT6 Setti
 For enter the EZ-Adjust menu just Google it ;)  
 Without an official LG USB dongle used by authorized service centres, most of that option will be greyed out, but manipulating the code in the correct way you can change the values without even unlocking them
 
-![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Menu.jpg)
+![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20example.jpg)
 
-![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20Calculator.jpg)
+
 
 The code shown is the decimal representation of a binary number of which each bit (or groups of it) represents specific flags
 After some test, trial and error and educated guess I manage to decode the method how LG save the settings on ToolOPT6 menu on my 55UP75006LF
@@ -69,4 +69,21 @@ I personally test "Audio EQ/ Eye" option using the code "196200459" finding "Typ
 
 #Expandig the Project  
 If your TV have different menu item, don't use the software but wrote here a new Issue. i will implement it on a new release :)  
-If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrote me on t.me/Ca0ss93
+If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrote me on t.me/Ca0ss93  
+
+#FAQ  
+Q: My TV model is not listed on "TV Series" field, can I use this tool?  
+A: Yes only if when you put all your toolOPT6 settings on the calculator and it show you your current code.  
+
+Q: I don't know how to access that menu.  
+A: Just Google "How to access LG Service Menu without the Service Remote"  
+
+Q: When I calculate a code with #any option# selected, the tv won't select that.  
+A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  
+
+Q: I succesfull reach toolOPT6 menu, but the input field is read only, how i can change it?  
+A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at https://t.me/Ca0ss93  
+Maybe in the future I will write a guide on how to do this, but for now I don't want LG to release a patch that blocks this method;
+
+
+
