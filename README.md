@@ -3,14 +3,14 @@
 
 This is an app created for helping user to enable some greyed-out ToolOPT6 Settings in EZ-Adjust menu, this can potentially brick your tv and cause it to malfunction.  
 For enter the EZ-Adjust menu just Google it ;)  
-Without an official LG USB dongle used by authorized service centres, most of that option will be greyed out, but manipulating the code in the correct way you can change the values without even unlocking them
+Without an official LG USB dongle used by authorized service centres, most of that option will be greyed out, but manipulating the code in the correct way you can change the values without even unlocking them  
 
 ![alt text](https://github.com/ca0ss/ToolOPT6-Calculator/blob/master/ToolOPT6%20example.jpg)
 
 
 
-The code shown is the decimal representation of a binary number of which each bit (or groups of it) represents specific flags
-After some test, trial and error and educated guess I manage to decode the method how LG save the settings on ToolOPT6 menu on my 55UP75006LF
+The code shown is the decimal representation of a binary number of which each bit (or groups of it) represents specific flags.  
+After some test, trial and error and educated guess I manage to decode the method how LG save the settings on ToolOPT6 menu on my 55UP75006LF.  
 
 00 1001 0111 0000 1100 1100 0000 10XX == Digital Eye  
 00 1001 0111 0000 1100 1100 0000 1X11 == Energy Star  
@@ -30,7 +30,7 @@ After some test, trial and error and educated guess I manage to decode the metho
 0X X001 0111 0000 1100 1100 0000 1011 == EDID  
 X0 1001 0111 0000 1100 1100 0000 1011 == WiSA  
 
-This is the same thing for the LG OLED 55G36LA
+This is the same thing for the LG OLED 55G36LA  
 
 111 0010 0001 0011 1101 0110 0000 10XX == Digital Eye  
 111 0010 0001 0011 1101 0110 0000 1X11 == Energy Star  
