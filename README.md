@@ -30,25 +30,7 @@ After some test, trial and error and educated guess I manage to decode the metho
 0X X001 0111 0000 1100 1100 0000 1011 == EDID  
 X0 1001 0111 0000 1100 1100 0000 1011 == WiSA  
 
-This is the same thing for the LG OLED 55G36LA  
-
-111 0010 0001 0011 1101 0110 0000 10XX == Digital Eye  
-111 0010 0001 0011 1101 0110 0000 1X11 == Energy Star  
-111 0010 0001 0011 1101 0110 0000 X011 == adaptive dim default  
-111 0010 0001 0011 1101 0110 XXXX 1011 == adaptive dimming  
-111 0010 0001 0011 1101 XXXX 0000 10111 == echo Default Backlight  
-111 0010 0001 0011 11XX 0110 0000 1011 == Sound Mode  
-111 0010 0001 0011 1X01 0110 0000 1011 == ISF  
-111 0010 0001 0011 X101 0110 0000 1011 == Set ID  
-111 0010 0001 001X 1101 0110 0000 1011 == Support ATV DVR  
-111 0010 0001 00X1 1101 0110 0000 1011 == DVR ready  
-111 0010 0001 0X11 1101 0110 0000 1011 == Audio Line OUT  
-111 0010 000X X011 1101 0110 0000 1011 == Wifi_BT  
-111 001X XXX1 0011 1101 0110 0000 1011 == Wifi ASsy  
-111 00X0 0001 0011 1101 0110 0000 1011 == Motion Remocon  
-111 XX10 0001 0011 1101 0110 0000 1011 == Audio EQ/ Eye  
-1XX 0010 0001 0011 1101 0110 0000 1011 == EDID  
-X11 0010 0001 0011 1101 0110 0000 1011 == WiSA  
+You will find all the other tv encoding i find on the folder "toolopt6 code test".
 
 
 #WARNING  
@@ -73,7 +55,7 @@ If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrot
 
 #FAQ  
 Q: My TV model is not listed on "TV Series" field, can I use this tool?  
-A: Yes only if when you put all your toolOPT6 settings on the calculator and it show you your current code.  
+A: You can use it only if when you put all your toolOPT6 settings on the calculator and it show you your current code; if doesnt show your code, please open a new issue :)  
 
 Q: I don't know how to access that menu.  
 A: Just Google "How to access LG Service Menu without the Service Remote"  
