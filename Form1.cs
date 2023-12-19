@@ -346,10 +346,10 @@ namespace ToolOPT6_Calculator
             if (cmbSeries.SelectedIndex == 1 && cmbDWifiAssy.Items.Count == 7) //G3 Serie
             {
                 //adding G3 items on WIFI ASSY; should investigate on c2 series if it have this items or not
-                cmbDWifiAssy.Items.Add("Single_22Y");
-                cmbDWifiAssy.Items.Add("M_Single_22Y");
-                cmbDWifiAssy.Items.Add("Dual_23Y");
-                cmbDWifiAssy.Items.Add("Single_23Y");
+                cmbDWifiAssy.Items.Add("Single_22Y");   // 0111
+                cmbDWifiAssy.Items.Add("M_Single_22Y"); // 1000
+                cmbDWifiAssy.Items.Add("Dual_23Y");     // 1001
+                cmbDWifiAssy.Items.Add("Single_23Y");   // 1010
             }
             else if(cmbSeries.SelectedIndex != 1 && cmbDWifiAssy.Items.Count != 7)
             {
