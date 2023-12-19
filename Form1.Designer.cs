@@ -111,7 +111,7 @@
             this.cmb1EYE.Items.AddRange(new object[] {
             "OFF",
             "eyeSensor",
-            "Unknown",
+            "rgb_sensor",
             "OTP_eyeSensor"});
             this.cmb1EYE.Location = new System.Drawing.Point(157, 128);
             this.cmb1EYE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -558,7 +558,7 @@
             "UP75006 / C11LB",
             "G36LA",
             "C26LB / NANO78",
-            "UN7300 !EXPERIMENTAL!",
+            "UN7300 / NANO79",
             "UM7050 / UM7300"});
             this.cmbSeries.Location = new System.Drawing.Point(84, 22);
             this.cmbSeries.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

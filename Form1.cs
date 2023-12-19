@@ -121,8 +121,8 @@ namespace ToolOPT6_Calculator
                 {
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(8, 1));
                     //this should stay 0
-                    int TMPWIFIASSY = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 3));
-                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please contact me on GitHub or t.me/Ca0ss93", "Error"); }
+                    int TMPWIFIASSY = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 3)); //on un7300 and um7050 series, there is no WiFi assy option, but LG for some reason keep this value as "000"; every code i see online have this value, try to change have no effect on the menu. 
+                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please contact me on GitHub or t.me/Ca0ss93", "Error"); }  //this is the alert if the pattern was different from "000", so in this case i need to make some other research and tests
                     cmbDWifiAssy.SelectedIndex = 0;
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
                     cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
@@ -368,12 +368,12 @@ namespace ToolOPT6_Calculator
             {
                 label15.Text = "Audio EQ/ EYE";
                 cmbFAudio.Items.Clear();
-                cmbFAudio.Items.Add("Default");
-                cmbFAudio.Items.Add("Type 1");
-                cmbFAudio.Items.Add("Type 2");
+                cmbFAudio.Items.Add("Default"); //00
+                cmbFAudio.Items.Add("Type 1");  //01
+                cmbFAudio.Items.Add("Type 2");  //10
                 cmbFAudio.SelectedIndex = 0;
             }
-            if (cmbSeries.SelectedIndex != 4 && cmbCWIFIBT.Items[1].ToString() != "Dual Combo MTK")
+            if (cmbSeries.SelectedIndex != 4 && cmbSeries.SelectedIndex != 3 && cmbCWIFIBT.Items[1].ToString() != "Dual Combo MTK")
             {
                 TMP = cmbCWIFIBT.SelectedIndex;
                 if (TMP >= 3) { TMP = 2; }
@@ -468,6 +468,23 @@ namespace ToolOPT6_Calculator
                 label6.Text = "Default Backlight";
 
             }
+            else if (cmbSeries.SelectedIndex == 3)  //un7300 Nano79 implementation
+            {
+                TMP = cmbCWIFIBT.SelectedIndex;
+
+                if (TMP >= 4) { TMP = 3; }
+                cmbCWIFIBT.Items.Clear();
+                cmbCWIFIBT.Items.Add("Ready"); //000 
+                cmbCWIFIBT.Items.Add("WiFi_Only");//001
+                cmbCWIFIBT.Items.Add("WiFi_BT"); //010
+                cmbCWIFIBT.Items.Add("None"); //011
+
+                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //100  input this value, tv accept the resulting code, but the value still the same
+                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //101  i keep the value here, just in case someone use it for future discovery
+                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //110  Nano796 have this value all the same, maybe other tv not
+                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //111 
+                cmbCWIFIBT.SelectedIndex = TMP;
+            }
             else if (cmbSeries.SelectedIndex == 4)  //um7050 implementation
             {
                 //removing other series EDID and adding um7050 items
@@ -490,12 +507,20 @@ namespace ToolOPT6_Calculator
                 cmbFAudio.SelectedIndex = 0;
 
                 TMP = cmbCWIFIBT.SelectedIndex;
+                if (TMP >= 5) { TMP = 4; }
                 cmbCWIFIBT.Items.Clear();
-                cmbCWIFIBT.Items.Add("None"); //000 "none" according to other models, still experiment, maybe there are more
+                cmbCWIFIBT.Items.Add("None"); //000 "none" according to other models
                 cmbCWIFIBT.Items.Add("Dual_combo_mtk");//001
                 cmbCWIFIBT.Items.Add("11ac_only_rtk"); //010
                 cmbCWIFIBT.Items.Add("11ac_only_mtk"); //011
                 cmbCWIFIBT.Items.Add("11ac_combo_mtk"); //100
+
+
+                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //101  input this value, tv accept the resulting code, but the value still the same
+                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //110  i keep the value here, just in case someone use it for future discovery
+                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //111  um7050 have this value all the same, maybe other tv not
+
+
                 cmbCWIFIBT.SelectedIndex = TMP;
             }
 
