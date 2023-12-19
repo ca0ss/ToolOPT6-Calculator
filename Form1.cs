@@ -479,9 +479,9 @@ namespace ToolOPT6_Calculator
                 cmbCWIFIBT.Items.Add("WiFi_BT"); //010
                 cmbCWIFIBT.Items.Add("None"); //011
 
-                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //100  input this value, tv accept the resulting code, but the value still the same
-                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //101  i keep the value here, just in case someone use it for future discovery
-                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //110  Nano796 have this value all the same, maybe other tv not
+                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //100  input this value, tv accept the resulting code, but the name still the same
+                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //101  i keep the variant here, just in case some tv use it, for future discovery and reference
+                //cmbCWIFIBT.Items.Add("WiFi_BT *"); //110  Nano796 have this name all the same, maybe other tv not
                 //cmbCWIFIBT.Items.Add("WiFi_BT *"); //111 
                 cmbCWIFIBT.SelectedIndex = TMP;
             }
@@ -516,9 +516,9 @@ namespace ToolOPT6_Calculator
                 cmbCWIFIBT.Items.Add("11ac_combo_mtk"); //100
 
 
-                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //101  input this value, tv accept the resulting code, but the value still the same
-                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //110  i keep the value here, just in case someone use it for future discovery
-                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //111  um7050 have this value all the same, maybe other tv not
+                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //101  input this value, tv accept the resulting code, but the name still the same
+                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //110  i keep the variant here, just in case some tv use it, for future discovery and reference
+                // cmbCWIFIBT.Items.Add("11ac_combo_mtk *"); //111  um7050 have this name all the same, maybe other tv not
 
 
                 cmbCWIFIBT.SelectedIndex = TMP;
