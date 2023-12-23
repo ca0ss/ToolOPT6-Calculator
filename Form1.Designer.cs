@@ -465,7 +465,8 @@
             this.cmbFAudio.Items.AddRange(new object[] {
             "Default", //00
             "Type1",   //01
-            "Type2"}); //10
+            "Type2",   //10
+            "Type3"}); //11
             this.cmbFAudio.Location = new System.Drawing.Point(157, 580);
             this.cmbFAudio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbFAudio.Name = "cmbFAudio";
