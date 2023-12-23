@@ -512,9 +512,10 @@
             this.cmbCWIFIBT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCWIFIBT.FormattingEnabled = true;
             this.cmbCWIFIBT.Items.AddRange(new object[] {
-            "None",             //00
-            "Dual Combo MTK",   //01
-            "WiFi_BT"});        //10
+            "Ready",             //00
+            "WiFi_Only",   //01
+            "WiFi_BT", //10
+            "None"});        //11
             this.cmbCWIFIBT.Location = new System.Drawing.Point(157, 482);
             this.cmbCWIFIBT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCWIFIBT.Name = "cmbCWIFIBT";
