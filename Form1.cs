@@ -371,9 +371,10 @@ namespace ToolOPT6_Calculator
                 cmbFAudio.Items.Add("Default"); //00
                 cmbFAudio.Items.Add("Type 1");  //01
                 cmbFAudio.Items.Add("Type 2");  //10
+                cmbFAudio.Items.Add("Type 3");  //11
                 cmbFAudio.SelectedIndex = 0;
             }
-            if (cmbSeries.SelectedIndex != 4 && cmbSeries.SelectedIndex != 3 && cmbCWIFIBT.Items[1].ToString() != "Dual Combo MTK")
+            if (cmbSeries.SelectedIndex != 4 && cmbSeries.SelectedIndex != 3 && cmbSeries.SelectedIndex != 0 && cmbCWIFIBT.Items[1].ToString() != "Dual Combo MTK")
             {
                 TMP = cmbCWIFIBT.SelectedIndex;
                 if (TMP >= 3) { TMP = 2; }
@@ -468,16 +469,16 @@ namespace ToolOPT6_Calculator
                 label6.Text = "Default Backlight";
 
             }
-            else if (cmbSeries.SelectedIndex == 3)  //un7300 Nano79 implementation
+            else if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 0)  //UP7500 un7300 Nano79 implementation
             {
                 TMP = cmbCWIFIBT.SelectedIndex;
 
                 if (TMP >= 4) { TMP = 3; }
                 cmbCWIFIBT.Items.Clear();
-                cmbCWIFIBT.Items.Add("Ready"); //000 
-                cmbCWIFIBT.Items.Add("WiFi_Only");//001
-                cmbCWIFIBT.Items.Add("WiFi_BT"); //010
-                cmbCWIFIBT.Items.Add("None"); //011
+                cmbCWIFIBT.Items.Add("Ready"); //00 
+                cmbCWIFIBT.Items.Add("WiFi_Only");//01
+                cmbCWIFIBT.Items.Add("WiFi_BT"); //10
+                cmbCWIFIBT.Items.Add("None"); //11
 
                 //cmbCWIFIBT.Items.Add("WiFi_BT *"); //100  input this value, tv accept the resulting code, but the name still the same
                 //cmbCWIFIBT.Items.Add("WiFi_BT *"); //101  i keep the variant here, just in case some tv use it, for future discovery and reference

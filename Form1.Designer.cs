@@ -109,10 +109,10 @@
             this.cmb1EYE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb1EYE.FormattingEnabled = true;
             this.cmb1EYE.Items.AddRange(new object[] {
-            "OFF",              //00
-            "eyeSensor",        //01
-            "rgb_sensor",       //10
-            "OTP_eyeSensor"});  //11
+            "OFF",
+            "eyeSensor",
+            "rgb_sensor",
+            "OTP_eyeSensor"});
             this.cmb1EYE.Location = new System.Drawing.Point(157, 128);
             this.cmb1EYE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb1EYE.Name = "cmb1EYE";
@@ -134,8 +134,8 @@
             this.cmb2Star.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb2Star.FormattingEnabled = true;
             this.cmb2Star.Items.AddRange(new object[] {
-            "OFF",  //0
-            "ON"}); //1
+            "OFF",
+            "ON"});
             this.cmb2Star.Location = new System.Drawing.Point(157, 157);
             this.cmb2Star.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb2Star.Name = "cmb2Star";
@@ -148,8 +148,8 @@
             this.cmb3AdaptiveDim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb3AdaptiveDim.FormattingEnabled = true;
             this.cmb3AdaptiveDim.Items.AddRange(new object[] {
-            "OFF",  //0
-            "ON"}); //1
+            "OFF",
+            "ON"});
             this.cmb3AdaptiveDim.Location = new System.Drawing.Point(157, 186);
             this.cmb3AdaptiveDim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb3AdaptiveDim.Name = "cmb3AdaptiveDim";
@@ -171,9 +171,9 @@
             this.cmb6Sound.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb6Sound.FormattingEnabled = true;
             this.cmb6Sound.Items.AddRange(new object[] {
-            "LG Sound Engine",  //00
-            "Dolby Atmos",      //01
-            "DTS Virtual X"});  //10
+            "LG Sound Engine",
+            "Dolby Atmos",
+            "DTS Virtual X"});
             this.cmb6Sound.Location = new System.Drawing.Point(157, 280);
             this.cmb6Sound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb6Sound.Name = "cmb6Sound";
@@ -195,22 +195,22 @@
             this.cmb5ECO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb5ECO.FormattingEnabled = true;
             this.cmb5ECO.Items.AddRange(new object[] {
-            "25",   //0000
-            "30",   //0001
-            "35",   //0010
-            "40",   //0011
-            "45",   //0100
-            "50",   //0101
-            "55",   //0110
-            "60",   //0111
-            "65",   //1000
-            "70",   //1001
-            "75",   //1010
-            "80",   //1011
-            "85",   //1100
-            "90",   //1101
-            "95",   //1110
-            "100"});//1111
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55",
+            "60",
+            "65",
+            "70",
+            "75",
+            "80",
+            "85",
+            "90",
+            "95",
+            "100"});
             this.cmb5ECO.Location = new System.Drawing.Point(157, 247);
             this.cmb5ECO.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb5ECO.Name = "cmb5ECO";
@@ -232,18 +232,18 @@
             this.cmb4Adaptive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb4Adaptive.FormattingEnabled = true;
             this.cmb4Adaptive.Items.AddRange(new object[] {
-            "Step1",    //0000
-            "Step2",    //0001
-            "Step3",    //0010
-            "Step4",    //0011
-            "Step5",    //0100
-            "Step6",    //0101
-            "Step7",    //0110
-            "Step8",    //0111
-            "Step9",    //1000
-            "Step10",   //1001
-            "Step11",   //1010
-            "Step12"}); //1011
+            "Step1",
+            "Step2",
+            "Step3",
+            "Step4",
+            "Step5",
+            "Step6",
+            "Step7",
+            "Step8",
+            "Step9",
+            "Step10",
+            "Step11",
+            "Step12"});
             this.cmb4Adaptive.Location = new System.Drawing.Point(157, 216);
             this.cmb4Adaptive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb4Adaptive.Name = "cmb4Adaptive";
@@ -265,8 +265,8 @@
             this.cmb8SETID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb8SETID.FormattingEnabled = true;
             this.cmb8SETID.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmb8SETID.Location = new System.Drawing.Point(157, 345);
             this.cmb8SETID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb8SETID.Name = "cmb8SETID";
@@ -288,8 +288,8 @@
             this.cmb7ISF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb7ISF.FormattingEnabled = true;
             this.cmb7ISF.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmb7ISF.Location = new System.Drawing.Point(157, 312);
             this.cmb7ISF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb7ISF.Name = "cmb7ISF";
@@ -311,8 +311,8 @@
             this.cmbADVR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbADVR.FormattingEnabled = true;
             this.cmbADVR.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmbADVR.Location = new System.Drawing.Point(157, 412);
             this.cmbADVR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbADVR.Name = "cmbADVR";
@@ -334,8 +334,8 @@
             this.cmb9ATV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb9ATV.FormattingEnabled = true;
             this.cmb9ATV.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmb9ATV.Location = new System.Drawing.Point(157, 378);
             this.cmb9ATV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb9ATV.Name = "cmb9ATV";
@@ -357,8 +357,8 @@
             this.cmbBAudio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBAudio.FormattingEnabled = true;
             this.cmbBAudio.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmbBAudio.Location = new System.Drawing.Point(157, 448);
             this.cmbBAudio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbBAudio.Name = "cmbBAudio";
@@ -434,8 +434,8 @@
             this.cmbHWISA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHWISA.FormattingEnabled = true;
             this.cmbHWISA.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmbHWISA.Location = new System.Drawing.Point(157, 650);
             this.cmbHWISA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbHWISA.Name = "cmbHWISA";
@@ -448,9 +448,9 @@
             this.cmbGEDID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGEDID.FormattingEnabled = true;
             this.cmbGEDID.Items.AddRange(new object[] {
-            "pcm",      //00
-            "ac3",      //01
-            "True HD"});//10
+            "pcm",
+            "ac3",
+            "True HD"});
             this.cmbGEDID.Location = new System.Drawing.Point(157, 615);
             this.cmbGEDID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbGEDID.Name = "cmbGEDID";
@@ -463,9 +463,10 @@
             this.cmbFAudio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFAudio.FormattingEnabled = true;
             this.cmbFAudio.Items.AddRange(new object[] {
-            "Default", //00
-            "Type1",   //01
-            "Type2"}); //10
+            "Default",
+            "Type1",
+            "Type2",
+            "Type3"});
             this.cmbFAudio.Location = new System.Drawing.Point(157, 580);
             this.cmbFAudio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbFAudio.Name = "cmbFAudio";
@@ -478,8 +479,8 @@
             this.cmbEREMOCON.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEREMOCON.FormattingEnabled = true;
             this.cmbEREMOCON.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmbEREMOCON.Location = new System.Drawing.Point(157, 547);
             this.cmbEREMOCON.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbEREMOCON.Name = "cmbEREMOCON";
@@ -492,13 +493,13 @@
             this.cmbDWifiAssy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDWifiAssy.FormattingEnabled = true;
             this.cmbDWifiAssy.Items.AddRange(new object[] {
-            "11ax",         //000
-            "Dual_21Y",     //001
-            "Dual_20Y",     //010
-            "Single_21Y",   //011
-            "Single_20Y",   //100
-            "None",         //101
-            "M_Dual_21Y"}); //110
+            "11ax",
+            "Dual_21Y",
+            "Dual_20Y",
+            "Single_21Y",
+            "Single_20Y",
+            "None",
+            "M_Dual_21Y"});
             this.cmbDWifiAssy.Location = new System.Drawing.Point(157, 514);
             this.cmbDWifiAssy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbDWifiAssy.Name = "cmbDWifiAssy";
@@ -511,9 +512,10 @@
             this.cmbCWIFIBT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCWIFIBT.FormattingEnabled = true;
             this.cmbCWIFIBT.Items.AddRange(new object[] {
-            "None",             //00
-            "Dual Combo MTK",   //01
-            "WiFi_BT"});        //10
+            "Ready",
+            "WiFi_Only",
+            "WiFi_BT",
+            "None"});
             this.cmbCWIFIBT.Location = new System.Drawing.Point(157, 482);
             this.cmbCWIFIBT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCWIFIBT.Name = "cmbCWIFIBT";
@@ -555,11 +557,11 @@
             this.cmbSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeries.FormattingEnabled = true;
             this.cmbSeries.Items.AddRange(new object[] {
-            "UP75006 / C11LB",  //0 the order here does not have any particulary reason
-            "G36LA",            //1 the first tv i added was mine, next the tv i add
-            "C26LB / NANO78",   //2 support thx to random people online and photo stored
-            "UN7300 / NANO79",  //3 on various forum
-            "UM7050 / UM7300"});//4
+            "UP75006 / C11LB",
+            "G36LA",
+            "C26LB / NANO78",
+            "UN7300 / NANO79",
+            "UM7050 / UM7300"});
             this.cmbSeries.Location = new System.Drawing.Point(84, 22);
             this.cmbSeries.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbSeries.Name = "cmbSeries";
@@ -581,8 +583,8 @@
             this.cmbIMARK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIMARK.FormattingEnabled = true;
             this.cmbIMARK.Items.AddRange(new object[] {
-            "OFF", //0
-            "ON"});//1
+            "OFF",
+            "ON"});
             this.cmbIMARK.Location = new System.Drawing.Point(157, 685);
             this.cmbIMARK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbIMARK.Name = "cmbIMARK";
