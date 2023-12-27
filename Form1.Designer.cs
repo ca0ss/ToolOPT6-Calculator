@@ -463,10 +463,10 @@
             this.cmbFAudio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFAudio.FormattingEnabled = true;
             this.cmbFAudio.Items.AddRange(new object[] {
-            "Default",
-            "Type1",
-            "Type2",
-            "Type3"});
+            "Default", //00
+            "Type1",   //01
+            "Type2",   //10
+            "Type3"}); //11
             this.cmbFAudio.Location = new System.Drawing.Point(157, 580);
             this.cmbFAudio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbFAudio.Name = "cmbFAudio";
@@ -493,13 +493,13 @@
             this.cmbDWifiAssy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDWifiAssy.FormattingEnabled = true;
             this.cmbDWifiAssy.Items.AddRange(new object[] {
-            "11ax",
-            "Dual_21Y",
-            "Dual_20Y",
-            "Single_21Y",
-            "Single_20Y",
-            "None",
-            "M_Dual_21Y"});
+            "11ax",         //000
+            "Dual_21Y",     //001
+            "Dual_20Y",     //010
+            "Single_21Y",   //011
+            "Single_20Y",   //100
+            "None",         //101
+            "M_Dual_21Y"}); //110
             this.cmbDWifiAssy.Location = new System.Drawing.Point(157, 514);
             this.cmbDWifiAssy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbDWifiAssy.Name = "cmbDWifiAssy";
@@ -512,10 +512,10 @@
             this.cmbCWIFIBT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCWIFIBT.FormattingEnabled = true;
             this.cmbCWIFIBT.Items.AddRange(new object[] {
-            "Ready",
-            "WiFi_Only",
-            "WiFi_BT",
-            "None"});
+            "Ready",             //00
+            "WiFi_Only",   //01
+            "WiFi_BT", //10
+            "None"});        //11
             this.cmbCWIFIBT.Location = new System.Drawing.Point(157, 482);
             this.cmbCWIFIBT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCWIFIBT.Name = "cmbCWIFIBT";
