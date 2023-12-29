@@ -49,15 +49,58 @@ namespace ToolOPT6_Calculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Decode();
+            //implementing error control
+
+            int input = 0;
+            try
+            {
+                input = int.Parse(txtToolOPT6.Text);
+            }
+            catch 
+            {
+                input = 0;
+            }
+
+
+            if (cmbSeries.SelectedIndex == 0 && input > 937422783)
+            {
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the maximum value for this series of tv that is 937422783. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "937422783"; //this is the maximum value for this series 
+                input = 937422783;
+            }
+            else if (cmbSeries.SelectedIndex == 1 && input > 2136469439)
+            {
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the maximum value for this series of tv that is 2136469439. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "2136469439";
+                input = 2136469439;
+            }
+            else if (cmbSeries.SelectedIndex == 2 && input > 2010640319)
+            {
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the maximum value for this series of tv that is 2010640319. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "2010640319";
+                input = 2010640319;
+            }
+            else if (cmbSeries.SelectedIndex == 3 && input > 1876946879) //i leave the space for input a value having the 000 pattern altered, just to show alert to user
+            {
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the theoretical maximum value for this series of tv that is 1876946879. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "1876946879"; //the maximum value leaving 000 pattern is 1818226623
+                input = 1876946879;
+            }
+            else if (cmbSeries.SelectedIndex == 4 && input > 2078797759) //i leave the space for input a value having the 000 pattern altered, just to show alert to user
+            {
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the theoretical maximum value for this series of tv that is 2078797759. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "2078797759"; //the maximum value leaving 000 pattern is 2020077503
+                input = 2078797759;
+            }
+            Decode(input);
         }
 
-        private void Decode()
+        private void Decode(int numeroDecimale)
         {
             try
             {
 
-                int numeroDecimale = int.Parse(txtToolOPT6.Text);
+                //int numeroDecimale = int.Parse(txtToolOPT6.Text);
 
                 //old static 30 digit code
                 // string numeroBinario = Convert.ToString(numeroDecimale, 2).PadLeft(30, '0');
@@ -122,7 +165,7 @@ namespace ToolOPT6_Calculator
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(8, 1));
                     //this should stay 0
                     int TMPWIFIASSY = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 3)); //on un7300 and um7050 series, there is no WiFi assy option, but LG for some reason keep this value as "000"; every code i see online have this value, try to change have no effect on the menu. 
-                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please contact me on GitHub or t.me/Ca0ss93", "Error"); }  //this is the alert if the pattern was different from "000", so in this case i need to make some other research and tests
+                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please don't use the code on your tv and contact me on GitHub or t.me/Ca0ss93", "Error"); }  //this is the alert if the pattern was different from "000", so in this case i need to make some other research and tests
                     cmbDWifiAssy.SelectedIndex = 0;
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
                     cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
@@ -315,21 +358,27 @@ namespace ToolOPT6_Calculator
             Encode();
         }
 
-
+        private bool IsNumeric(string input)
+        {
+            // Check if the string is a number
+            return int.TryParse(input, out _);
+        }
 
         private void txtToolOPT6_TextChanged(object sender, EventArgs e)
         {
-            if (txtToolOPT6.Text == "")
+            if (txtToolOPT6.Text == "" || !IsNumeric(txtToolOPT6.Text)) //implementing error control
             {
                 txtToolOPT6.Text = "0";
                 txtToolOPT6.SelectAll();
             }
 
+            if (txtToolOPT6.Text.StartsWith("-")) { txtToolOPT6.Text = txtToolOPT6.Text.Substring(1); }
+
             if (cmbSeries.SelectedIndex == 0)
             {
                 lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(30, '0'), 4);
             }
-            else if (cmbSeries.SelectedIndex != 0)
+            else if (cmbSeries.SelectedIndex != 0) 
             {
                 lblBinary.Text = InsertSpacesFromRight(Convert.ToString(long.Parse(txtToolOPT6.Text), 2).PadLeft(31, '0'), 4);
             }
