@@ -72,6 +72,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cmbIMARK = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.cmdHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,11 +87,11 @@
             // txtToolOPT6
             // 
             this.txtToolOPT6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToolOPT6.Location = new System.Drawing.Point(78, 67);
+            this.txtToolOPT6.Location = new System.Drawing.Point(84, 67);
             this.txtToolOPT6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtToolOPT6.MaxLength = 10;
             this.txtToolOPT6.Name = "txtToolOPT6";
-            this.txtToolOPT6.Size = new System.Drawing.Size(171, 20);
+            this.txtToolOPT6.Size = new System.Drawing.Size(165, 20);
             this.txtToolOPT6.TabIndex = 1;
             this.txtToolOPT6.TextChanged += new System.EventHandler(this.txtToolOPT6_TextChanged);
             this.txtToolOPT6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtToolOPT6_KeyPress);
@@ -463,10 +464,10 @@
             this.cmbFAudio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFAudio.FormattingEnabled = true;
             this.cmbFAudio.Items.AddRange(new object[] {
-            "Default", //00
-            "Type1",   //01
-            "Type2",   //10
-            "Type3"}); //11
+            "Default",
+            "Type1",
+            "Type2",
+            "Type3"});
             this.cmbFAudio.Location = new System.Drawing.Point(157, 580);
             this.cmbFAudio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbFAudio.Name = "cmbFAudio";
@@ -493,13 +494,13 @@
             this.cmbDWifiAssy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDWifiAssy.FormattingEnabled = true;
             this.cmbDWifiAssy.Items.AddRange(new object[] {
-            "11ax",         //000
-            "Dual_21Y",     //001
-            "Dual_20Y",     //010
-            "Single_21Y",   //011
-            "Single_20Y",   //100
-            "None",         //101
-            "M_Dual_21Y"}); //110
+            "11ax",
+            "Dual_21Y",
+            "Dual_20Y",
+            "Single_21Y",
+            "Single_20Y",
+            "None",
+            "M_Dual_21Y"});
             this.cmbDWifiAssy.Location = new System.Drawing.Point(157, 514);
             this.cmbDWifiAssy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbDWifiAssy.Name = "cmbDWifiAssy";
@@ -512,10 +513,10 @@
             this.cmbCWIFIBT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCWIFIBT.FormattingEnabled = true;
             this.cmbCWIFIBT.Items.AddRange(new object[] {
-            "Ready",             //00
-            "WiFi_Only",   //01
-            "WiFi_BT", //10
-            "None"});        //11
+            "Ready",
+            "WiFi_Only",
+            "WiFi_BT",
+            "None"});
             this.cmbCWIFIBT.Location = new System.Drawing.Point(157, 482);
             this.cmbCWIFIBT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCWIFIBT.Name = "cmbCWIFIBT";
@@ -565,7 +566,7 @@
             this.cmbSeries.Location = new System.Drawing.Point(84, 22);
             this.cmbSeries.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbSeries.Name = "cmbSeries";
-            this.cmbSeries.Size = new System.Drawing.Size(243, 21);
+            this.cmbSeries.Size = new System.Drawing.Size(165, 21);
             this.cmbSeries.TabIndex = 39;
             this.cmbSeries.SelectedIndexChanged += new System.EventHandler(this.cmbSeries_SelectedIndexChanged);
             // 
@@ -601,11 +602,23 @@
             this.label21.TabIndex = 41;
             this.label21.Text = "Markone WiFi Single";
             // 
+            // cmdHelp
+            // 
+            this.cmdHelp.Location = new System.Drawing.Point(265, 22);
+            this.cmdHelp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmdHelp.Name = "cmdHelp";
+            this.cmdHelp.Size = new System.Drawing.Size(62, 22);
+            this.cmdHelp.TabIndex = 43;
+            this.cmdHelp.Text = "Help";
+            this.cmdHelp.UseVisualStyleBackColor = true;
+            this.cmdHelp.Click += new System.EventHandler(this.cmdHelp_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 729);
+            this.Controls.Add(this.cmdHelp);
             this.Controls.Add(this.cmbIMARK);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -708,6 +721,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cmbIMARK;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button cmdHelp;
     }
 }
 

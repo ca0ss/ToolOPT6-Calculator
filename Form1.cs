@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -582,5 +583,42 @@ namespace ToolOPT6_Calculator
             Encode();
         }
 
+        private void cmdHelp_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Does your TV have \"Markone Wifi\" as the last option?", "TV Series selector Helper", MessageBoxButtons.YesNoCancel);
+            if (dialogResult == DialogResult.Yes)
+            {
+                cmbSeries.SelectedIndex = 2;
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                dialogResult = MessageBox.Show("Does your TV have \"EYE Curve Derivation\" as third to last option?", "TV Series selector Helper", MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    cmbSeries.SelectedIndex = 4;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    dialogResult = MessageBox.Show("Does your TV have \"WiFi Assy Type\" fifth to last option?", "TV Series selector Helper", MessageBoxButtons.YesNoCancel);
+                    if (dialogResult == DialogResult.No)
+                    {
+                        cmbSeries.SelectedIndex = 3;
+                    }
+                    else if (dialogResult == DialogResult.Yes)
+                    {
+                        dialogResult = MessageBox.Show("The option for \"Default Backlight\" it's called \"ECO Default Backlight\"?", "TV Series selector Helper", MessageBoxButtons.YesNoCancel);
+                        if (dialogResult == DialogResult.No)
+                        {
+                            cmbSeries.SelectedIndex = 1;
+                        }
+                        else if (dialogResult == DialogResult.Yes)
+                        {
+                            cmbSeries.SelectedIndex = 0;
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }
