@@ -60,7 +60,7 @@ Q: I don't know how to access that menu.
 A: Just Google "How to access LG Service Menu without the Service Remote"  
 
 Q: When I calculate a code with #any option# selected, the tv won't select that.  
-A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  
+A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  If entering a code does not obtain the desired effect, for example "LG Sound engine" appears instead of "DTS Virtual X" but the entered code remains unchanged on the TV, I strongly recommend entering a new code consistent with what was calculated; in the example above calculate a code with "Dolby Atmos" selected instead of "DTS Virtual X"
 
 Q: I succesfull reach toolOPT6 menu, but the input field is read only, how i can change it?  
 A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at https://t.me/Ca0ss93  
