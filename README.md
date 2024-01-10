@@ -54,7 +54,7 @@ If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrot
 
 #FAQ  
 Q: My TV model is not listed on "TV Series" field, can I use this tool?  
-A: You can use it only if when you put all your toolOPT6 settings on the calculator and it show you your current code; if doesnt show your code, please open a new issue :)  
+A: You can use it only if when you put all your toolOPT6 settings on the calculator and it show you your current code; if you need help identifying your tv matching series, try the "Help" button. If you have some trouble, please open a new issue :)  
 
 Q: I don't know how to access that menu.  
 A: Just Google "How to access LG Service Menu without the Service Remote"  
