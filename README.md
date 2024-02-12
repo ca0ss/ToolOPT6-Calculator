@@ -30,7 +30,7 @@ After some test, trial and error and educated guess I manage to decode the metho
 0X X001 0111 0000 1100 1100 0000 1011 == EDID  
 X0 1001 0111 0000 1100 1100 0000 1011 == WiSA  
 
-You will find all the other tv encoding i find on the folder "toolopt6 code test".
+You will find all the other tv encoding i find on the folder "toolopt6_test".
 
 
 #WARNING  
