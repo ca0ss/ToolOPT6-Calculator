@@ -177,7 +177,7 @@ namespace ToolOPT6_Calculator
             }
             catch
             {
-                MessageBox.Show("Invalid Input", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("If you are reading this, the code you entered is not valid for the tv series you choose. Please don't use the code on your tv and contact me on GitHub or t.me/Ca0ss93", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -373,7 +373,7 @@ namespace ToolOPT6_Calculator
                 txtToolOPT6.SelectAll();
             }
 
-            if (txtToolOPT6.Text.StartsWith("-")) { txtToolOPT6.Text = txtToolOPT6.Text.Substring(1); }
+            if (txtToolOPT6.Text.StartsWith("-") || txtToolOPT6.Text.StartsWith("+")) { txtToolOPT6.Text = txtToolOPT6.Text.Substring(1); }
 
             if (cmbSeries.SelectedIndex == 0)
             {
