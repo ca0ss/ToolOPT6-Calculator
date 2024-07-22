@@ -30,7 +30,7 @@ After some test, trial and error and educated guess I manage to decode the metho
 0X X001 0111 0000 1100 1100 0000 1011 == EDID  
 X0 1001 0111 0000 1100 1100 0000 1011 == WiSA  
 
-You will find all the other tv encoding i find on the folder "toolopt6 code test".
+You will find all the other tv encoding i find on the folder "toolopt6_test".
 
 
 #WARNING  
@@ -54,13 +54,16 @@ If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrot
 
 #FAQ  
 Q: My TV model is not listed on "TV Series" field, can I use this tool?  
-A: You can use it only if when you put all your toolOPT6 settings on the calculator and it show you your current code; if doesnt show your code, please open a new issue :)  
+A: You can use it only if when you put all your toolOPT6 settings on the calculator and it show you your current code; if you need help identifying your tv matching series, try the "Help" button. If you have some trouble, please open a new issue :)  
 
 Q: I don't know how to access that menu.  
 A: Just Google "How to access LG Service Menu without the Service Remote"  
 
 Q: When I calculate a code with #any option# selected, the tv won't select that.  
-A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  
+A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  If entering a code does not obtain the desired effect, for example "LG Sound engine" appears instead of "DTS Virtual X" but the entered code remains unchanged on the TV, I strongly recommend entering a new code consistent with what was calculated; in the example above calculate a new code with "Dolby Atmos" selected instead of "DTS Virtual X"
+
+Q:Even if I enable "DVR Ready" and "Support ATV DVR" option, the TV doesn't seem to support recording, what's wrong?  
+A:For some markets, such as Italy for example, there are laws that impose taxes on manufacturers of electronic devices in order to record programs protected by copyright. For this reason LG has blocked these functions if you select one of these countries. You should not change country to Germany to enable PVR and Time Shift ;)
 
 Q: I succesfull reach toolOPT6 menu, but the input field is read only, how i can change it?  
 A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at https://t.me/Ca0ss93  
