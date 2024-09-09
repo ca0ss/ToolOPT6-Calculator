@@ -408,7 +408,7 @@ namespace ToolOPT6_Calculator
                 cmbDWifiAssy.Items.Add("Dual_23Y");     // 1001
                 cmbDWifiAssy.Items.Add("Single_23Y");   // 1010
             }
-            else if(cmbSeries.SelectedIndex != 1 && cmbDWifiAssy.Items.Count != 7)
+            else if(cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 2 && cmbDWifiAssy.Items.Count != 7)
             {
                 //removing G3 items on WIFI ASSY
                 TMP = cmbDWifiAssy.SelectedIndex;
