@@ -392,10 +392,17 @@ namespace ToolOPT6_Calculator
 
         private void cmbSeries_SelectedIndexChanged(object sender, EventArgs e)
         {
-           //WiFi ASSY Changer, I should check the type avaiable for other series. UP and G3 are checked, other not
+           //WiFi ASSY Changer, I should check the type avaiable for other series. UP and G3 are checked, other not. C2 serie, according to a video on yt have single_22y voice
             if (cmbSeries.SelectedIndex == 1 && cmbDWifiAssy.Items.Count == 7) //G3 Serie
             {
-                //adding G3 items on WIFI ASSY; should investigate on c2 series if it have this items or not
+                //adding G3 items on WIFI ASSY; should investigate on c2 series if it have this items or not **update, on a yt video the c2 have Single_22Y item
+                cmbDWifiAssy.Items.Add("Single_22Y");   // 0111
+                cmbDWifiAssy.Items.Add("M_Single_22Y"); // 1000
+                cmbDWifiAssy.Items.Add("Dual_23Y");     // 1001
+                cmbDWifiAssy.Items.Add("Single_23Y");   // 1010
+            }
+            else if (cmbSeries.SelectedIndex == 2 && cmbDWifiAssy.Items.Count == 7) //C2 Serie experimental, maybe it have all items, should test it
+            {
                 cmbDWifiAssy.Items.Add("Single_22Y");   // 0111
                 cmbDWifiAssy.Items.Add("M_Single_22Y"); // 1000
                 cmbDWifiAssy.Items.Add("Dual_23Y");     // 1001
