@@ -62,6 +62,9 @@ A: Just Google "How to access LG Service Menu without the Service Remote"
 Q: When I calculate a code with #any option# selected, the tv won't select that.  
 A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  If entering a code does not obtain the desired effect, for example "LG Sound engine" appears instead of "DTS Virtual X" but the entered code remains unchanged on the TV, I strongly recommend entering a new code consistent with what was calculated; in the example above calculate a new code with "Dolby Atmos" selected instead of "DTS Virtual X"
 
+Q: Will enabling or disabling the Energy Star option affect the power consumption of the TV?  
+A: I don’t think so. I conducted some measurements using a Shelly PM to check the power consumption in standby mode, while the TV is on and watching a channel, and when an app is open. I didn’t notice any significant differences. The only change is the Energy Star logo next to the apps section, which I believe is more about aesthetics than functionality.  
+
 Q:Even if I enable "DVR Ready" and "Support ATV DVR" option, the TV doesn't seem to support recording, what's wrong?  
 A:For some markets, such as Italy for example, there are laws that impose taxes on manufacturers of electronic devices in order to record programs protected by copyright. For this reason LG has blocked these functions if you select one of these countries. You should not change country to Germany to enable PVR and Time Shift ;)
 
