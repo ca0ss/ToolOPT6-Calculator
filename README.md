@@ -33,7 +33,7 @@ X0 1001 0111 0000 1100 1100 0000 1011 == WiSA
 You will find all the other tv encoding i find on the folder "toolopt6_test".
 
 
-#WARNING  
+## WARNING  
 I'm not responsable of bricking your TV! remember to copy and save your original code. 
 If you input a wrong code that make an "out of bound" selection, the TV simply adjust it to a valid value in most of case. I try to enable DTS on both G3 and 75UP tv, in the first case the tv keep wrong code but does not change "Sound Mode" selection, in the second the tv simply adjust code to a valid value. Should not make any brick.  
 
@@ -42,17 +42,17 @@ Use the software only if:
 2. Put the code showed in your TV in the software interface and chose Reverse button. The item in yout tv MUST match the item in the software interface.  
 3. If clicking on reverse button, software don't show any error.  
 
-#Final thought  
+### Final thought  
 I personally use this software for enabling Dolby Atmos and unlocking PVR and Time Shift on my TV.  
 I found some of the blacked-out items via Google image searches of the menu in question. Some values reported in the program are the result of plausible hypotheses based on other televisions and redundant values in multiple televisions with the same menu items, some are reported by users who helped me by making their televisions available to me.
 Sound mode in newest tv should be only 00 for LG Sound Engine and 01 for Dolby Atmos. DTS Virtual X option shouldnt be present on all tv, but i keep it there for try to enable it just in case.  
 
-
-#Expandig the Project  
+### Expandig the Project  
 If your TV have different menu item, don't use the software but wrote here a new Issue. i will implement it on a new release :)  
 If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrote me on t.me/Ca0ss93  
 
-#FAQ  
+
+## FAQ  
 Q: My TV model is not listed on "TV Series" field, can I use this tool?  
 A: You can use it only if when you put all your toolOPT6 settings on the calculator and it show you your current code; if you need help identifying your tv matching series, try the "Help" button. If you have some trouble, please open a new issue :)  
 
