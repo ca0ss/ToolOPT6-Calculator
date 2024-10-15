@@ -65,8 +65,8 @@ A: I find most of the option online based on picture taken from the tv, maybe so
 Q: Does enabling or disabling the Energy Star option impact the TV's power consumption?  
 A: Based on my measurements with a Shelly PM, I observed no significant differences in power consumption during standby, when watching a channel, or using an app. The only noticeable change is the Energy Star logo next to the Auto Power Save (APS) picture mode, which seems more aesthetic than functional. If you have access to professional measurement tools and can conduct more tests, I would appreciate your insights!
 
-Q:Even if I enable "DVR Ready" and "Support ATV DVR" option, the TV doesn't seem to support recording, what's wrong?  
-A:For some markets, such as Italy for example, there are laws that impose taxes on manufacturers of electronic devices in order to record programs protected by copyright. For this reason LG has blocked these functions if you select one of these countries. You should not change country to Germany to enable PVR and Time Shift ;)
+Q: Even if I enable "DVR Ready" and "Support ATV DVR" option, the TV doesn't seem to support recording, what's wrong?  
+A: For some markets, such as Italy for example, there are laws that impose taxes on manufacturers of electronic devices in order to record programs protected by copyright. For this reason LG has blocked these functions if you select one of these countries. You should not change country to Germany to enable PVR and Time Shift ;)
 
 Q: I succesfull reach toolOPT6 menu, but the input field is read only, how i can change it?  
 A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at https://t.me/Ca0ss93  
