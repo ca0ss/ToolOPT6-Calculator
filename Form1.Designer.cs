@@ -562,7 +562,8 @@
             "G36LA",
             "C26LB / NANO78",
             "UN7300 / NANO79",
-            "UM7050 / UM7300"});
+            "UM7050 / UM7300",
+            "B42LA"});
             this.cmbSeries.Location = new System.Drawing.Point(84, 22);
             this.cmbSeries.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbSeries.Name = "cmbSeries";

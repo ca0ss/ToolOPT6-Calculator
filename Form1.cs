@@ -93,6 +93,14 @@ namespace ToolOPT6_Calculator
                 txtToolOPT6.Text = "2078797759"; //the maximum value leaving 000 pattern is 2020077503
                 input = 2078797759;
             }
+            else if (cmbSeries.SelectedIndex == 5 && input > 2078797759) //
+            {
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the theoretical maximum value for this series of tv that is CHANGE HERE. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "2078797759"; 
+                input = 2078797759;
+            }
+
+
             Decode(input);
         }
 
@@ -127,7 +135,7 @@ namespace ToolOPT6_Calculator
                 cmbADVR.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 18), 1));
                 cmbBAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring((numeroBinario.Length - 19), 1));
 
-                if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4) //un7300 and um7050 experimental support
+                if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4) //un7300 and um7050 support
                 {
                     cmbCWIFIBT.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(9, 3)); //wifi have 3 bit on this series
                 } else
@@ -144,8 +152,8 @@ namespace ToolOPT6_Calculator
                     cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
                     cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
                 }
-                else if (cmbSeries.SelectedIndex == 1)
-                {//G3 value of WiFi ASSY has 4 bit
+                else if (cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 5)
+                {//G3 and B42LA value of WiFi ASSY has 4 bit
                     cmbDWifiAssy.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 4));
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 1));
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
@@ -202,8 +210,8 @@ namespace ToolOPT6_Calculator
             
             string WIFIASSY = "000"; //implementing un7300 and um7050 experimental support, there is no WiFi Assy type, ovewer in the photo i find online there is always this 3 zero pattern
 
-            //implementing G3 Encoding
-            if (cmbSeries.SelectedIndex == 1) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(4, '0'); }
+            //implementing G3 and B42LA Encoding
+            if (cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 5) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(4, '0'); }
             else if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 2) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(3, '0'); }
 
             //not specify what appen if selected index was 3 or 4 bc already 000 and unused
@@ -393,24 +401,53 @@ namespace ToolOPT6_Calculator
         private void cmbSeries_SelectedIndexChanged(object sender, EventArgs e)
         {
            //WiFi ASSY Changer, I should check the type avaiable for other series. UP and G3 are checked, other not. C2 serie, according to a video on yt have single_22y voice
-            if ((cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 2) && cmbDWifiAssy.Items.Count == 7) //G3 Serie + //C2 Serie experimental, maybe it have all items, should test it
+            if ((cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 2) && cmbDWifiAssy.Items.Count != 11) //G3 Serie + C2 Serie experimental, maybe it have all items, should test it
             {
-                //adding G3 items on WIFI ASSY; should investigate on c2 series if it have this items or not **update, on a yt video the c2 have Single_22Y item
+                TMP = cmbDWifiAssy.SelectedIndex;
+                if (TMP >= 11) { TMP = 10; } //keeping selected item
+
+                while (cmbDWifiAssy.Items.Count > 7) //removing extra item, pt.1
+                {
+                    cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                }
+
+
+                //adding G3 items on WIFI ASSY; on a yt video the c2 have Single_22Y item, so probably have same item of G3. should confirm it
                 cmbDWifiAssy.Items.Add("Single_22Y");   // 0111
                 cmbDWifiAssy.Items.Add("M_Single_22Y"); // 1000
                 cmbDWifiAssy.Items.Add("Dual_23Y");     // 1001
                 cmbDWifiAssy.Items.Add("Single_23Y");   // 1010
+
+                cmbDWifiAssy.SelectedIndex = TMP; //removing extra item, pt.2
             }
-            else if(cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 2 && cmbDWifiAssy.Items.Count != 7)
+            else if (cmbSeries.SelectedIndex == 5 && cmbDWifiAssy.Items.Count != 12) //b42la support
+            {
+                label11.Text = "Support Calman SW";
+                if (cmbDWifiAssy.Items.Count == 11) //adding B42LA items on WIFI ASSY;
+                {
+                    cmbDWifiAssy.Items.Add("M_Single_24Y");   // 1011
+                }
+                else if ( cmbDWifiAssy.Items.Count == 7)
+                {
+                    cmbDWifiAssy.Items.Add("Single_22Y");   // 0111
+                    cmbDWifiAssy.Items.Add("M_Single_22Y"); // 1000
+                    cmbDWifiAssy.Items.Add("Dual_23Y");     // 1001
+                    cmbDWifiAssy.Items.Add("Single_23Y");   // 1010
+                    cmbDWifiAssy.Items.Add("M_Single_24Y"); // 1011
+                }
+            }
+            else if(cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 2 && cmbSeries.SelectedIndex != 5 && cmbDWifiAssy.Items.Count != 7)
             {
                 //removing G3 items on WIFI ASSY
                 TMP = cmbDWifiAssy.SelectedIndex;
                 if(TMP >= 7) { TMP = 6; } //keeping selected item
                 cmbDWifiAssy.SelectedIndex = TMP;
-                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
-                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
-                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
-                cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+
+                while (cmbDWifiAssy.Items.Count > 7)
+                {
+                    cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                }
+                
             }
 
             //Reverting UM7050 items
@@ -498,13 +535,20 @@ namespace ToolOPT6_Calculator
                 label6.Text = "ECO Default Backlight";
             }
 
+            //Adjust Name for B42LA Series
+            if (cmbSeries.SelectedIndex != 5)
+            {
+                label11.Text = "Support ATV DVR";
+            }
+
+
             //Adjust Size for UP75 and G3
             if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 1)
             {
                 this.Size = new Size(371, 728);
             }
 
-            if (cmbSeries.SelectedIndex == 1) //G3 Series
+            if (cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 5) //G3 and B42LA Series
             {
                 //removing EDID and adding G3 EDID items
                 TMP = cmbGEDID.SelectedIndex;
@@ -515,7 +559,7 @@ namespace ToolOPT6_Calculator
                 cmbGEDID.Items.Add("TrueHD+dts"); //11
                 cmbGEDID.SelectedIndex = TMP;
 
-                //changing Backlight name according to G3 menu
+                //changing Backlight name according to G3 and B42LA menu
                 label6.Text = "Default Backlight";
 
             }
@@ -607,13 +651,17 @@ namespace ToolOPT6_Calculator
                     else if (dialogResult == DialogResult.Yes)
                     {
                         dialogResult = MessageBox.Show("The option for \"Default Backlight\" it's called \"ECO Default Backlight\"?", "TV Series selector Helper", MessageBoxButtons.YesNoCancel);
-                        if (dialogResult == DialogResult.No)
-                        {
-                            cmbSeries.SelectedIndex = 1;
-                        }
-                        else if (dialogResult == DialogResult.Yes)
+                        if (dialogResult == DialogResult.Yes)
                         {
                             cmbSeries.SelectedIndex = 0;
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            dialogResult = MessageBox.Show("Does your TV have \"Support Calman SW\" option?", "TV Series selector Helper", MessageBoxButtons.YesNoCancel);
+                            if (dialogResult == DialogResult.No) { cmbSeries.SelectedIndex = 1; }
+                            else if (dialogResult == DialogResult.Yes) { cmbSeries.SelectedIndex = 5; }
+                            
+
                         }
                     }
                 }
