@@ -543,7 +543,7 @@ namespace ToolOPT6_Calculator
 
 
             //Adjust Size for UP75 and G3
-            if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 1)
+            if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 5)
             {
                 this.Size = new Size(371, 728);
             }
