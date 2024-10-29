@@ -33,7 +33,7 @@ X0 1001 0111 0000 1100 1100 0000 1011 == WiSA
 You will find all the other tv encoding i find on the folder "toolopt6_test".
 
 
-#WARNING  
+## WARNING  
 I'm not responsable of bricking your TV! remember to copy and save your original code. 
 If you input a wrong code that make an "out of bound" selection, the TV simply adjust it to a valid value in most of case. I try to enable DTS on both G3 and 75UP tv, in the first case the tv keep wrong code but does not change "Sound Mode" selection, in the second the tv simply adjust code to a valid value. Should not make any brick.  
 
@@ -42,17 +42,17 @@ Use the software only if:
 2. Put the code showed in your TV in the software interface and chose Reverse button. The item in yout tv MUST match the item in the software interface.  
 3. If clicking on reverse button, software don't show any error.  
 
-#Final thought  
+### Final thought  
 I personally use this software for enabling Dolby Atmos and unlocking PVR and Time Shift on my TV.  
 I found some of the blacked-out items via Google image searches of the menu in question. Some values reported in the program are the result of plausible hypotheses based on other televisions and redundant values in multiple televisions with the same menu items, some are reported by users who helped me by making their televisions available to me.
 Sound mode in newest tv should be only 00 for LG Sound Engine and 01 for Dolby Atmos. DTS Virtual X option shouldnt be present on all tv, but i keep it there for try to enable it just in case.  
 
-
-#Expandig the Project  
+### Expandig the Project  
 If your TV have different menu item, don't use the software but wrote here a new Issue. i will implement it on a new release :)  
 If you have ToolOPT6 option locked out, you can unlock it having JailBreak, wrote me on t.me/Ca0ss93  
 
-#FAQ  
+
+## FAQ  
 Q: My TV model is not listed on "TV Series" field, can I use this tool?  
 A: You can use it only if when you put all your toolOPT6 settings on the calculator and it show you your current code; if you need help identifying your tv matching series, try the "Help" button. If you have some trouble, please open a new issue :)  
 
@@ -62,8 +62,11 @@ A: Just Google "How to access LG Service Menu without the Service Remote"
 Q: When I calculate a code with #any option# selected, the tv won't select that.  
 A: I find most of the option online based on picture taken from the tv, maybe some tv have different option. For example some tv have "DTS Virtual X" on Sound Mode, other not.  If entering a code does not obtain the desired effect, for example "LG Sound engine" appears instead of "DTS Virtual X" but the entered code remains unchanged on the TV, I strongly recommend entering a new code consistent with what was calculated; in the example above calculate a new code with "Dolby Atmos" selected instead of "DTS Virtual X"
 
-Q:Even if I enable "DVR Ready" and "Support ATV DVR" option, the TV doesn't seem to support recording, what's wrong?  
-A:For some markets, such as Italy for example, there are laws that impose taxes on manufacturers of electronic devices in order to record programs protected by copyright. For this reason LG has blocked these functions if you select one of these countries. You should not change country to Germany to enable PVR and Time Shift ;)
+Q: Does enabling or disabling the Energy Star option impact the TV's power consumption?  
+A: Based on my measurements with a Shelly PM, I observed no significant differences in power consumption during standby, when watching a channel, or using an app. The only noticeable change is the Energy Star logo next to the Auto Power Save (APS) picture mode, which seems more aesthetic than functional. If you have access to professional measurement tools and can conduct more tests, I would appreciate your insights!
+
+Q: Even if I enable "DVR Ready" and "Support ATV DVR" option, the TV doesn't seem to support recording, what's wrong?  
+A: For some markets, such as Italy for example, there are laws that impose taxes on manufacturers of electronic devices in order to record programs protected by copyright. For this reason LG has blocked these functions if you select one of these countries. You should not change country to Germany to enable PVR and Time Shift ;)
 
 Q: I succesfull reach toolOPT6 menu, but the input field is read only, how i can change it?  
 A: You need Jailbreak your tv. Via ROOT command shell it is possible to tamper some qml file thus unlocking the menu. There is no online documentation about it but it's something I've done a couple of times and it's relatively safe. Wrote me on Telegram at https://t.me/Ca0ss93  
