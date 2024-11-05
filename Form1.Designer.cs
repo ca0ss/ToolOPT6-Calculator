@@ -559,7 +559,7 @@
             this.cmbSeries.FormattingEnabled = true;
             this.cmbSeries.Items.AddRange(new object[] {
             "UP75006 / C11LB",
-            "G36LA",
+            "G36LA / QNED816RE",
             "C26LB / NANO78",
             "UN7300 / NANO79",
             "UM7050 / UM7300",
