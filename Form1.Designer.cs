@@ -349,9 +349,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(25, 381);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 13);
+            this.label11.Size = new System.Drawing.Size(113, 13);
             this.label11.TabIndex = 18;
-            this.label11.Text = "Support ATV DVR";
+            this.label11.Text = "Support ATV/AV DVR";
             // 
             // cmbBAudio
             // 

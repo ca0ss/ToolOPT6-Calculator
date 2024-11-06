@@ -79,17 +79,17 @@ namespace ToolOPT6_Calculator
                 txtToolOPT6.Text = "2010640319";
                 input = 2010640319;
             }
-            else if (cmbSeries.SelectedIndex == 3 && input > 1776283583) //i leave the space for input a value having the 000 pattern altered, just to show alert to user
+            else if (cmbSeries.SelectedIndex == 3 && input > 1776283583) //i leave the space for input a value having the 00 pattern altered, just to show alert to user
             {
                  MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the theoretical maximum value for this series of tv that is 1776283583. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
                  txtToolOPT6.Text = "1776283583"; //the maximum value leaving 00 pattern is 1751117759
                 input = 1776283583;
              }
-            else if (cmbSeries.SelectedIndex == 4 && input > 2078797759) //i leave the space for input a value having the 000 pattern altered, just to show alert to user
+            else if (cmbSeries.SelectedIndex == 4 && input > 2045243327) //i leave the space for input a value having the 00 pattern altered, just to show alert to user
             {
-                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the theoretical maximum value for this series of tv that is 2078797759. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
-                txtToolOPT6.Text = "2078797759"; //the maximum value leaving 000 pattern is 2020077503
-                input = 2078797759;
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the theoretical maximum value for this series of tv that is 2045243327. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "2045243327"; //the maximum value leaving 00 pattern is 2020077503
+                input = 2045243327;
             }
             else if (cmbSeries.SelectedIndex == 5 && input > 2138566591) //
             {
@@ -158,25 +158,14 @@ namespace ToolOPT6_Calculator
                     cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 1));
                     cmbIMARK.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
                 }
-                else if (cmbSeries.SelectedIndex == 3) //un7300 support
+                else if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4) //un7300 and um7050 support
                 {
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(8, 1));
                     //this should stay 0
-                    int TMPWIFIASSY = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 2)); //on un7300 there is no WiFi assy option, but LG for some reason keep this value as "00"; 
-                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please don't use the code on your tv and contact me on GitHub or t.me/Ca0ss93", "Error 3 ASSY != 0", MessageBoxButtons.OK, MessageBoxIcon.Warning); }  //this is the alert if the pattern was different from "00", so in this case i need to make some other research and tests
+                    int TMPWIFIASSY = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 2)); //on un7300 and um7050 series there is no WiFi assy option, but LG for some reason keep this value as "00"; 
+                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please don't use the code on your tv and contact me on GitHub or t.me/Ca0ss93", "Error 3.4 ASSY != 0", MessageBoxButtons.OK, MessageBoxIcon.Warning); }  //this is the alert if the pattern was different from "00", so in this case i need to make some other research and tests
                     cmbDWifiAssy.SelectedIndex = 0;
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 3));
-                    cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
-                    cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
-                }
-                else if (cmbSeries.SelectedIndex == 4) //um7050 support
-                {
-                    cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(8, 1));
-                    //this should stay 0
-                    int TMPWIFIASSY = ConvertiBinarioInDecimale(numeroBinario.Substring(5, 3)); //on um7050 series, there is no WiFi assy option, but LG for some reason keep this value as "000"; every code i see online have this value, try to change have no effect on the menu. 
-                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please don't use the code on your tv and contact me on GitHub or t.me/Ca0ss93", "Error 4 ASSY != 0", MessageBoxButtons.OK, MessageBoxIcon.Warning); }  //this is the alert if the pattern was different from "000", so in this case i need to make some other research and tests
-                    cmbDWifiAssy.SelectedIndex = 0;
-                    cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 2));
                     cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
                     cmbHWISA.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(0, 1));
                 }
@@ -205,24 +194,23 @@ namespace ToolOPT6_Calculator
             string WIFI = Convert.ToString(cmbCWIFIBT.SelectedIndex, 2).PadLeft(2, '0');
 
             //implementing un7300 experimental support, idk if it have more wify type. should have 3 bit dedicated, maybe 5 option
-            if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4) { WIFI = Convert.ToString(cmbCWIFIBT.SelectedIndex, 2).PadLeft(3, '0'); }
+            if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4) { WIFI = Convert.ToString(cmbCWIFIBT.SelectedIndex, 2).PadLeft(3, '0'); } //check this
 
-            //implementing un7300 and um7050 support, there is no WiFi Assy type, ovewer in the photo i find online there is always this zero's pattern
-            string WIFIASSY = "00"; //cmbSeries.SelectedIndex == 3, un7300 support with 2 zero's
-            if (cmbSeries.SelectedIndex == 4) { WIFIASSY = "000"; }
-
+            //implementing un7300 and um7050 support, there is no WiFi Assy type, ovewer in the photo i find online there is always two zero's pattern
+            string WIFIASSY = "00"; //cmbSeries.SelectedIndex == 3 || 4, un7300 support with 2 zero's
+            
 
             //implementing G3 and B42LA Encoding
             if (cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 5) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(4, '0'); }
             else if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 2) { WIFIASSY = Convert.ToString(cmbDWifiAssy.SelectedIndex, 2).PadLeft(3, '0'); }
 
-            //not specify what appen if selected index was 3 or 4 bc already 000 and unused
+            //not specify what appen if selected index was 3 or 4 bc already 00 and unused
 
             string REMOCON = Convert.ToString(cmbEREMOCON.SelectedIndex, 2);
             string AUDIOEQ = Convert.ToString(cmbFAudio.SelectedIndex, 2).PadLeft(2, '0');
 
-            if (cmbSeries.SelectedIndex == 3) { AUDIOEQ = Convert.ToString(cmbFAudio.SelectedIndex, 2).PadLeft(3, '0'); } //un7300 series should have 2 bit for wifiassy placeholder and 3 bit for the audio
-            
+            if (cmbSeries.SelectedIndex == 3 || cmbSeries.SelectedIndex == 4) { AUDIOEQ = Convert.ToString(cmbFAudio.SelectedIndex, 2).PadLeft(3, '0'); } //un7300 and um7050 series have 2 bit for wifiassy placeholder and 3 bit for the audio
+
             string EDID = Convert.ToString(cmbGEDID.SelectedIndex, 2).PadLeft(2, '0');
             string WISA = Convert.ToString(cmbHWISA.SelectedIndex, 2).PadLeft(1, '0');
 
@@ -458,7 +446,7 @@ namespace ToolOPT6_Calculator
             //Reverting UM7050 items
             if (cmbSeries.SelectedIndex != 4 && label15.Text != "Audio EQ/ EYE")
             {
-                
+                label13.Text = "WiSa";
                 label15.Text = "Audio EQ/ EYE";
                 cmbFAudio.Items.Clear();
                 cmbFAudio.Items.Add("Default"); //00
@@ -467,6 +455,7 @@ namespace ToolOPT6_Calculator
                 cmbFAudio.Items.Add("Type 3");  //11
                 cmbFAudio.SelectedIndex = 0;
             }
+
             if (cmbSeries.SelectedIndex == 3 && cmbFAudio.Items.Count != 5) //fix support for un7300 series
             {
                 cmbFAudio.Items.Add("Type 4"); //100
@@ -615,12 +604,14 @@ namespace ToolOPT6_Calculator
 
                 //changing names according to um7050 menu
                 label15.Text = "EYE Curve Derivation";
-
-                //adding initial curve experimental support
+                label13.Text = "Support WiSa";
+                //adding curve support based on tvconfig-gen file
                 cmbFAudio.Items.Clear();
-                cmbFAudio.Items.Add("Initial Curve"); // 00 
-                cmbFAudio.Items.Add("1 Pole, Eye Uncoating"); //01
-                cmbFAudio.Items.Add("2 Pole, Eye Uncoating"); //10
+                cmbFAudio.Items.Add("Initial Curve");           //000 
+                cmbFAudio.Items.Add("1 Pole, Eye Coating");     //001
+                cmbFAudio.Items.Add("1 Pole, Eye Uncoating");   //010
+                cmbFAudio.Items.Add("2 Pole, Eye Coating");     //011
+                cmbFAudio.Items.Add("2 Pole, Eye Uncoating");   //100
                 cmbFAudio.SelectedIndex = 0;
 
                 TMP = cmbCWIFIBT.SelectedIndex;
