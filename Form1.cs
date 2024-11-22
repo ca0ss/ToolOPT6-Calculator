@@ -446,7 +446,7 @@ namespace ToolOPT6_Calculator
             //Reverting UM7050 items
             if (cmbSeries.SelectedIndex != 4 && label15.Text != "Audio EQ/ EYE")
             {
-                label13.Text = "WiSa";
+                label13.Text = "WiSA";
                 label15.Text = "Audio EQ/ EYE";
                 cmbFAudio.Items.Clear();
                 cmbFAudio.Items.Add("Default"); //00
@@ -547,11 +547,15 @@ namespace ToolOPT6_Calculator
             }
 
             //Adjust Name for B42LA Series
-            if (cmbSeries.SelectedIndex != 5)
+            if (cmbSeries.SelectedIndex != 5 || cmbSeries.SelectedIndex != 4)
             {
                 label11.Text = "Support ATV DVR";
             }
 
+            if (cmbSeries.SelectedIndex == 5)
+            {
+                label11.Text = "Support Calman SW";
+            }
 
             //Adjust Size for UP75 and G3
             if (cmbSeries.SelectedIndex == 0 || cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 5)
@@ -604,7 +608,8 @@ namespace ToolOPT6_Calculator
 
                 //changing names according to um7050 menu
                 label15.Text = "EYE Curve Derivation";
-                label13.Text = "Support WiSa";
+                label13.Text = "Support WiSA";
+                label11.Text = "Support ATV/AV DVR";
                 //adding curve support based on tvconfig-gen file
                 cmbFAudio.Items.Clear();
                 cmbFAudio.Items.Add("Initial Curve");           //000 
