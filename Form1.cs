@@ -460,7 +460,7 @@ namespace ToolOPT6_Calculator
             {
                 cmbFAudio.Items.Add("Type 4"); //100
             }
-            else if (cmbSeries.SelectedIndex != 3 || cmbSeries.SelectedIndex != 4 && cmbFAudio.Items.Count == 5)
+            else if ((cmbSeries.SelectedIndex != 3 && cmbSeries.SelectedIndex != 4) && cmbFAudio.Items.Count == 5)
             {
                 TMP = cmbFAudio.SelectedIndex;
                 if (TMP >= 4) { TMP = 3; }
@@ -547,14 +547,9 @@ namespace ToolOPT6_Calculator
             }
 
             //Adjust Name for B42LA Series
-            if (cmbSeries.SelectedIndex != 5 || cmbSeries.SelectedIndex != 4)
+            if (cmbSeries.SelectedIndex != 5 && cmbSeries.SelectedIndex != 4)
             {
                 label11.Text = "Support ATV DVR";
-            }
-
-            if (cmbSeries.SelectedIndex == 5)
-            {
-                label11.Text = "Support Calman SW";
             }
 
             //Adjust Size for UP75 and G3
