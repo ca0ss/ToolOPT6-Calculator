@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ToolOPT6_Calculator
@@ -392,7 +393,9 @@ namespace ToolOPT6_Calculator
             // detect double click event
             if (m.Msg == WM_NCLBUTTONDBLCLK)
             {
-                MessageBox.Show("ToolOPT6_Calculator v1.6\r\nCoded by Ca0ss\r\n\r\nI want to express my gratitude to: \r\n - dkmn-123\r\n - zazafa2013\r\n - Serg301275\r\n - fabiosci\r\n - colemar\r\n\r\n...and everyone else who helped\r\nme find codes and menu options. ☺", "Application Contributors", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                byte[] data = Convert.FromBase64String("VG9vbE9QVDZfQ2FsY3VsYXRvciB2MS42CkNvZGVkIGJ5IENhMHNzCgpJIHdhbnQgdG8gZXhwcmVzcyBteSBncmF0aXR1ZGUgdG86CiAtIGRrbW4tMTIzCiAtIHphemFmYTIwMTMKIC0gU2VyZzMwMTI3NQogLSBmYWJpb3NjaQogLSBjb2xlbWFyCgouLi5hbmQgZXZlcnlvbmUgZWxzZSB3aG8gaGVscGVkCm1lIGZpbmQgY29kZXMgYW5kIG1lbnUgb3B0aW9ucy4g4pi6");
+                string decodedString = System.Text.Encoding.UTF8.GetString(data);
+                MessageBox.Show(decodedString, "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
