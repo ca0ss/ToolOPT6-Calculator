@@ -8,6 +8,8 @@ namespace ToolOPT6_Calculator
     {
         public int TMP = 0;
 
+        private const int WM_NCLBUTTONDBLCLK = 0x00A3; // Double click message value
+
         public Form1()
         {
             InitializeComponent();
@@ -385,6 +387,17 @@ namespace ToolOPT6_Calculator
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            // detect double click event
+            if (m.Msg == WM_NCLBUTTONDBLCLK)
+            {
+                MessageBox.Show("ToolOPT6_Calculator v1.6\r\nCoded by Ca0ss\r\n\r\nI want to express my gratitude to: \r\n - dkmn-123\r\n - zazafa2013\r\n - Serg301275\r\n - fabiosci\r\n - colemar\r\n\r\n...and everyone else who helped\r\nme find codes and menu options. ☺", "Application Contributors", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            base.WndProc(ref m);
+        }
         private void cmbSeries_SelectedIndexChanged(object sender, EventArgs e)
         {
            //WiFi ASSY Changer, I should check the type avaiable for other series. UP and G3 are checked, other not. C2 serie, according to a video on yt have single_22y voice
@@ -673,7 +686,7 @@ namespace ToolOPT6_Calculator
                     }
                 }
             }
-
         }
+       
     }
 }
