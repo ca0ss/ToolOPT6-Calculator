@@ -525,8 +525,8 @@ namespace ToolOPT6_Calculator
                 this.Size = new Size(371, 693);
             }
 
-            //restoring EDID Items for  u7500, C26, un7300 Series
-            if (cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 4)
+            //restoring EDID Items for  u7500, C26, un7300 and b42la Series 
+            if (cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 4 && cmbSeries.SelectedIndex != 5)
             {
                 TMP = cmbGEDID.SelectedIndex;
                 if (TMP >= 3) { TMP = 2; }
