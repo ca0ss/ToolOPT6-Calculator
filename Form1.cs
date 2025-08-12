@@ -70,11 +70,11 @@ namespace ToolOPT6_Calculator
                 txtToolOPT6.Text = "2136469439";
                 input = 2136469439;
             }
-            else if (cmbSeries.SelectedIndex == 2 && input > 2010640319)
+            else if (cmbSeries.SelectedIndex == 2 && input > 2012737471)
             {
-                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the maximum value for this series of tv that is 2010640319. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
-                txtToolOPT6.Text = "2010640319";
-                input = 2010640319;
+                MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the maximum value for this series of tv that is 2012737471. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
+                txtToolOPT6.Text = "2012737471";
+                input = 2012737471;
             }
             else if (cmbSeries.SelectedIndex == 3 && input > 1776283583) //i leave the space for input a value having the 00 pattern altered, just to show alert to user
             {
@@ -404,7 +404,7 @@ namespace ToolOPT6_Calculator
         private void cmbSeries_SelectedIndexChanged(object sender, EventArgs e)
         {
            //WiFi ASSY Changer, I should check the type avaiable for other series. UP and G3 are checked, other not. C2 serie, according to a video on yt have single_22y voice
-            if ((cmbSeries.SelectedIndex == 1 || cmbSeries.SelectedIndex == 2) && cmbDWifiAssy.Items.Count != 11) //G3 Serie + C2 Serie experimental, maybe it have all items, should test it
+            if ((cmbSeries.SelectedIndex == 1) && cmbDWifiAssy.Items.Count != 11) //G3 Serie
             {
                 TMP = cmbDWifiAssy.SelectedIndex;
                 if (TMP >= 11) { TMP = 10; } //keeping selected item
@@ -415,7 +415,7 @@ namespace ToolOPT6_Calculator
                 }
 
 
-                //adding G3 items on WIFI ASSY; on a yt video the c2 have Single_22Y item, so probably have same item of G3. should confirm it
+                //adding G3 items on WIFI ASSY; on a yt video the c2 have only Single_22Y item
                 cmbDWifiAssy.Items.Add("Single_22Y");   // 0111
                 cmbDWifiAssy.Items.Add("M_Single_22Y"); // 1000
                 cmbDWifiAssy.Items.Add("Dual_23Y");     // 1001
@@ -423,6 +423,23 @@ namespace ToolOPT6_Calculator
 
                 cmbDWifiAssy.SelectedIndex = TMP; //removing extra item, pt.2
             }
+            else if ((cmbSeries.SelectedIndex == 2) && cmbDWifiAssy.Items.Count != 8) //C2 Serie
+            {
+                TMP = cmbDWifiAssy.SelectedIndex;
+                if (TMP >= 8) { TMP = 7; } //keeping selected item
+
+                while (cmbDWifiAssy.Items.Count > 7) //removing extra item, pt.1
+                {
+                    cmbDWifiAssy.Items.RemoveAt(cmbDWifiAssy.Items.Count - 1);
+                }
+
+                //adding c2 item on WIFI ASSY; on a yt video the c2 have Single_22Y item. should confirm it
+                cmbDWifiAssy.Items.Add("Single_22Y");   // 111
+
+
+                cmbDWifiAssy.SelectedIndex = TMP; //removing extra item, pt.2
+            }
+
             else if (cmbSeries.SelectedIndex == 5 && cmbDWifiAssy.Items.Count != 12) //b42la support
             {
                 label11.Text = "Support Calman SW";
@@ -525,7 +542,7 @@ namespace ToolOPT6_Calculator
                 this.Size = new Size(371, 693);
             }
 
-            //restoring EDID Items for  u7500, C26, un7300 and b42la Series 
+            //restoring EDID Items for  u7500, C26, un7300 Series 
             if (cmbSeries.SelectedIndex != 1 && cmbSeries.SelectedIndex != 4 && cmbSeries.SelectedIndex != 5)
             {
                 TMP = cmbGEDID.SelectedIndex;
