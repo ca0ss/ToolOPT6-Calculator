@@ -88,7 +88,7 @@ namespace ToolOPT6_Calculator
                 txtToolOPT6.Text = "2045243327"; //the maximum value leaving 00 pattern is 2020077503
                 input = 2045243327;
             }
-            else if (cmbSeries.SelectedIndex == 5 && input > 2138566591) //
+            else if (cmbSeries.SelectedIndex == 5 && input > 2138566591)
             {
                 MessageBox.Show("The value that you entered " + txtToolOPT6.Text + " is bigger than the theoretical maximum value for this series of tv that is 2138566591. \r\nIf you input the value from your tv, probably you enter a wrong tv series or there is an error. \r\nPlease don't use the code on your tv and wrote me on t.me/Ca0ss93 or open a issue on GitHub", "Error");
                 txtToolOPT6.Text = "2138566591"; 
@@ -160,7 +160,7 @@ namespace ToolOPT6_Calculator
                     cmbEREMOCON.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(8, 1));
                     //this should stay 0
                     int TMPWIFIASSY = ConvertiBinarioInDecimale(numeroBinario.Substring(6, 2)); //on un7300 and um7050 series there is no WiFi assy option, but LG for some reason keep this value as "00"; 
-                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please don't use the code on your tv and contact me on GitHub or t.me/Ca0ss93", "Error 3.4 ASSY != 0", MessageBoxButtons.OK, MessageBoxIcon.Warning); }  //this is the alert if the pattern was different from "00", so in this case i need to make some other research and tests
+                    if (TMPWIFIASSY != 0) { MessageBox.Show("If you are reading this, there is something wrong with the code you input. Please don't use the code on your tv and contact me on GitHub or t.me/Ca0ss93", "Error " + cmbSeries.SelectedIndex.ToString() + " ASSY = " + TMPWIFIASSY.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning); }  //this is the alert if the pattern was different from "00", so in this case i need to make some other research and tests
                     cmbDWifiAssy.SelectedIndex = 0;
                     cmbFAudio.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(3, 3));
                     cmbGEDID.SelectedIndex = ConvertiBinarioInDecimale(numeroBinario.Substring(1, 2));
